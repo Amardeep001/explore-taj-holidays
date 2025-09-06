@@ -22,7 +22,7 @@ export default function WhyChooseUs() {
           {points.map((p, idx) => (
             <div
               key={idx}
-              className="bg-gradient-to-tr from-gray-800 via-gray-700 to-gray-600 p-6 rounded-2xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1"
+              className="bg-gradient-to-tr from-gray-900 via-gray-700 to-gray-500 p-6 rounded-2xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1"
             >
               <p className="text-white font-medium text-lg">{p}</p>
             </div>
