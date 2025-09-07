@@ -21,7 +21,7 @@ export default function Contact() {
         </p>
 
         {/* Contact Info Cards Section */}
-        <section className="w-full py-20 bg-gradient-to-br from-indigo-950 via-purple-900 to-indigo-900">
+        <section className="w-full py-20 rounded-md bg-gradient-to-br from-indigo-950 via-purple-900 to-indigo-900">
           <div className="max-w-6xl mx-auto px-6">
             <h2 className="text-3xl font-bold text-center text-white mb-12">
               Get in Touch
@@ -36,7 +36,7 @@ export default function Contact() {
 
               <div className="bg-white/10 backdrop-blur-md p-6 rounded-2xl shadow-lg hover:shadow-2xl transition border border-white/10">
                 <FaPhoneAlt className="text-green-400 text-3xl mb-3 mx-auto" />
-                <p className="font-semibold text-white">+91-XXXXXXXXXX</p>
+                <p className="font-semibold text-white">+91-7017149405</p>
                 <p className="text-gray-300 text-sm">📱 Phone / WhatsApp</p>
               </div>
 

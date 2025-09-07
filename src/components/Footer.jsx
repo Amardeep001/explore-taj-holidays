@@ -46,7 +46,7 @@ export default function Footer() {
           <h3 className="text-lg font-semibold text-white mb-3">Contact Us</h3>
           <ul className="space-y-2 text-sm">
             <li>📍 Agra, Uttar Pradesh, India</li>
-            <li>📞 +91 98765 43210</li>
+            <li>📞 +91 7017149405</li>
             <li>✉️ info@exploretajholidays.com</li>
           </ul>
         </div>

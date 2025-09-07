@@ -1,4 +1,5 @@
 import React from "react";
+import tourismImage from "../assets/agra_tourism.jpg";
 
 const About = () => {
   return (
@@ -69,7 +70,10 @@ const About = () => {
         {/* Right: Image */}
         <div className="relative group">
           <img
-            src="https://images.pexels.com/photos/1796734/pexels-photo-1796734.jpeg?auto=compress&cs=tinysrgb&w=1200"
+            src={
+              tourismImage ||
+              "https://images.pexels.com/photos/1796734/pexels-photo-1796734.jpeg?auto=compress&cs=tinysrgb&w=1200"
+            }
             alt="Taj Mahal Travel"
             className="rounded-2xl shadow-lg transform group-hover:scale-105 transition duration-500"
           />

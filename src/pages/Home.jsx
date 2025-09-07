@@ -2,6 +2,10 @@ import Hero from "../components/Hero";
 import TourCard from "../components/TourCard";
 import WhyChooseUs from "../components/WhyChooseUs";
 import About from "../components/About";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import Contact from "../components/Contact";
+import LocationMap from "../components/LocationMap";
 
 export default function Home() {
   const tours = [
@@ -37,6 +41,7 @@ export default function Home() {
 
   return (
     <>
+      <Navbar />
       {/* Hero Section */}
       <Hero />
 
@@ -67,6 +72,9 @@ export default function Home() {
           <WhyChooseUs />
         </div>
       </section>
+      <Contact />
+      <LocationMap />
+      <Footer />
     </>
   );
 }

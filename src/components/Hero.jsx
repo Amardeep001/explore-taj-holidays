@@ -1,9 +1,14 @@
+import bannerImage from "../assets/banner.png";
+
 export default function Hero() {
   return (
     <section
       className="relative h-screen flex items-center justify-center bg-cover bg-center"
       style={{
-        backgroundImage: `url('https://images.pexels.com/photos/753626/pexels-photo-753626.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1080&w=1920')`,
+        backgroundImage: `url(${
+          bannerImage ||
+          "https://images.pexels.com/photos/753626/pexels-photo-753626.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1080&w=1920"
+        })`,
       }}
     >
       {/* Gradient overlay */}
