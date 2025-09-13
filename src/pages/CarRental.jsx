@@ -23,7 +23,7 @@ export default function CarRentalPage() {
         <div className="absolute inset-0 bg-black/40"></div>
         <div className="relative z-10 text-white max-w-3xl mx-auto px-6">
           <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
-            🚗 Car Rental Services – Explore Agra & Beyond
+            Car Rental Services – Explore Agra & Beyond
           </h1>
           <p className="text-lg md:text-xl text-gray-200">
             Comfortable, safe, and affordable rides with professional drivers –
@@ -37,7 +37,7 @@ export default function CarRentalPage() {
         <h2 className="text-3xl md:text-4xl font-extrabold mb-6 text-gray-900">
           Why Choose Our Car Rental Service?
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mx-10 ">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:mx-10  ">
           {[
             {
               icon: <FaCheckCircle />,
@@ -92,7 +92,7 @@ export default function CarRentalPage() {
           <h2 className="text-2xl md:text-3xl font-bold mb-10 text-gray-900">
             🚙 Vehicle Options
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mx-10 ">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:mx-10 ">
             {[
               { type: "Sedan", desc: "Perfect for couples & small families." },
               { type: "SUV", desc: "Ideal for groups & off-road trips." },
@@ -123,7 +123,7 @@ export default function CarRentalPage() {
           <h2 className="text-2xl md:text-3xl font-bold mb-10 text-gray-900">
             📅 Rental Packages
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mx-10 ">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:mx-10 ">
             {[
               {
                 title: "Half-Day Rentals",

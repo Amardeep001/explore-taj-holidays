@@ -35,10 +35,10 @@ export default function About() {
       </section>
 
       {/* Values */}
-      <section className="bg-white px-6 lg:px-10 py-16">
+      <section className="bg-white lg:px-10 py-16">
         <div className="max-w-full mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <div>
-            <h3 className="text-2xl font-bold mb-4 text-gray-900">
+            <h3 className="text-2xl text-center font-bold mb-4 text-gray-900">
               Our Commitment
             </h3>
             <p className="text-gray-600 leading-relaxed mb-4">
@@ -103,7 +103,7 @@ export default function About() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-gradient-to-r from-[#9d1c1f] to-[#a11f23] text-center text-white">
+      <section className="px-6 py-20 bg-gradient-to-r from-[#9d1c1f] to-[#a11f23] text-center text-white">
         <h3 className="text-3xl md:text-4xl font-bold mb-4">
           Let’s Create Memories Together
         </h3>
