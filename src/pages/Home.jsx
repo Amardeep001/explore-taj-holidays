@@ -41,7 +41,6 @@ export default function Home() {
 
   return (
     <>
-      <Navbar />
       {/* Hero Section */}
       <Hero />
 
@@ -74,7 +73,6 @@ export default function Home() {
       </section>
       <Contact />
       <LocationMap />
-      <Footer />
     </>
   );
 }
