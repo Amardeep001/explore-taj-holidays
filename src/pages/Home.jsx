@@ -1,3 +1,4 @@
+import React, { useEffect } from "react";
 import Hero from "../components/Hero";
 import TourCard from "../components/TourCard";
 import WhyChooseUs from "../components/WhyChooseUs";
@@ -8,6 +9,10 @@ import Contact from "../components/Contact";
 import LocationMap from "../components/LocationMap";
 
 export default function Home() {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
   const tours = [
     {
       title: "Same Day Delhi – Agra – Delhi Tour by Road",

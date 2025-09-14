@@ -1,16 +1,21 @@
 // src/pages/About.jsx
+import React, { useEffect } from "react";
 import travelExperienceImage from "../assets/travel_experience.jpeg";
 import { Link } from "react-router-dom";
+import aboutImage from "../assets/about.png";
 
 export default function About() {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
   return (
     <main className="bg-gray-50 min-h-screen">
       {/* Banner */}
       <section
-        className="relative h-[50vh] bg-cover bg-center flex items-center justify-center "
+        className="relative h-[80vh] bg-cover bg-center flex items-center justify-center "
         style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1505761671935-60b3a7427bad?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80')",
+          backgroundImage: `url(${aboutImage})`,
         }}
       >
         <div className="absolute inset-0 bg-black/50"></div>

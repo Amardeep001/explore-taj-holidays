@@ -1,4 +1,5 @@
 // src/pages/GuideService.jsx
+import React, { useEffect } from "react";
 import {
   FaIdBadge,
   FaGlobe,
@@ -16,11 +17,15 @@ import heritageImage from "../assets/guide/heritage_walk.png";
 import localMarketImage from "../assets/guide/local_market.png";
 
 export default function GuideServicePage() {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
   return (
     <main className="w-full bg-gradient-to-br from-[#fff8f5] via-white to-[#fdfdfd] min-h-screen">
       {/* Hero Section */}
       <section
-        className="relative w-full h-[60vh] bg-cover bg-center flex items-center justify-center text-center"
+        className="relative w-full h-[80vh] bg-cover bg-center flex items-center justify-center text-center"
         style={{
           backgroundImage: `url(${guideBanner})`,
         }}

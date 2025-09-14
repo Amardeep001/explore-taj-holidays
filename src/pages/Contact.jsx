@@ -1,14 +1,19 @@
+import React, { useEffect } from "react";
 import { Mail, Phone, MapPin } from "lucide-react";
+import contactImage from "../assets/contact.png";
 
 export default function Contact() {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
   return (
     <div className="bg-gray-50 min-h-screen pb-16">
       {/* Banner */}
       <section
-        className="relative h-[50vh] bg-cover bg-center flex items-center justify-center"
+        className="relative h-[60vh] bg-cover bg-center flex items-center justify-center"
         style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1526779259212-939e64788e3c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80')",
+          backgroundImage: `url(${contactImage})`,
         }}
       >
         <div className="absolute inset-0 bg-black/50"></div>

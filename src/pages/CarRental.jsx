@@ -1,4 +1,5 @@
 // src/pages/CarRental.jsx
+import React, { useEffect } from "react";
 import {
   FaCar,
   FaMapMarkerAlt,
@@ -8,22 +9,26 @@ import {
   FaCheckCircle,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import carRentalImage from "../assets/car_rental.png";
 
 export default function CarRentalPage() {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
   return (
     <main className="w-full bg-gradient-to-br from-[#fff8f5] via-white to-[#fdfdfd] min-h-screen">
       {/* Hero Section */}
       <section
-        className="relative w-full h-[60vh] bg-cover bg-center flex items-center justify-center text-center"
+        className="relative w-full h-[70vh] bg-cover bg-center flex items-center justify-center text-center"
         style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1600&q=80')",
+          backgroundImage: `url(${carRentalImage})`,
         }}
       >
         <div className="absolute inset-0 bg-black/40"></div>
-        <div className="relative z-10 text-white max-w-3xl mx-auto px-6">
+        <div className="relative z-10 text-white max-w-4xl mx-auto px-6">
           <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
-            Car Rental Services – Explore Agra & Beyond
+            Car Rental Services – Explore Agra
           </h1>
           <p className="text-lg md:text-xl text-gray-200">
             Comfortable, safe, and affordable rides with professional drivers –
