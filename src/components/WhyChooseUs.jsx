@@ -1,11 +1,13 @@
+import { Link } from "react-router-dom";
+
 export default function WhyChooseUs() {
   const points = [
-    "Over a decade of experience (since 2012)",
-    "Licensed professional guides",
-    "Comfortable, well-maintained transport",
-    "Customized itineraries",
-    "Transparent pricing – no hidden costs",
-    "24/7 assistance during your trip",
+    { text: "Over a decade of experience (since 2012)", link: "/about" },
+    { text: "Licensed professional guides", link: "/guides" },
+    { text: "Comfortable, well-maintained transport", link: "/car-rental" },
+    { text: "Customized itineraries", link: "/itineraries" },
+    { text: "Transparent pricing – no hidden costs", link: "/guides" },
+    { text: "24/7 assistance during your trip", link: "/guides" },
   ];
 
   return (
@@ -20,12 +22,13 @@ export default function WhyChooseUs() {
 
         <div className="grid md:grid-cols-3 gap-8">
           {points.map((p, idx) => (
-            <div
+            <Link
               key={idx}
-              className="bg-gradient-to-tr from-gray-900 via-gray-700 to-gray-500 p-6 rounded-2xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1"
+              to={p.link}
+              className="block bg-gradient-to-tr from-gray-900 via-gray-700 to-gray-500 p-6 rounded-2xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1"
             >
-              <p className="text-white font-medium text-lg">{p}</p>
-            </div>
+              <p className="text-white font-medium text-lg">{p.text}</p>
+            </Link>
           ))}
         </div>
       </div>

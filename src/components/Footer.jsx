@@ -43,6 +43,14 @@ export default function Footer() {
                 Car Rental
               </Link>
             </li>
+            <li>
+              <Link
+                to="/itineraries"
+                className="hover:text-yellow-400 transition"
+              >
+                Itineraries
+              </Link>
+            </li>
           </ul>
         </div>
 

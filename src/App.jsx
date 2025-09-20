@@ -7,6 +7,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import GuideService from "./pages/GuideService";
 import CarRentalPage from "./pages/CarRental";
+import Itineraries from "./pages/Itineraries";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/guides" element={<GuideService />} />
           <Route path="/car-rental" element={<CarRentalPage />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/itineraries" element={<Itineraries />} />
         </Routes>
       </Layout>
     </Router>

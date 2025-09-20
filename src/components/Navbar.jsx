@@ -12,6 +12,7 @@ export default function Navbar() {
     { id: "/contact", label: "Contact" },
     { id: "/guides", label: "Guide" },
     { id: "/car-rental", label: "Car Rental" },
+    { id: "/itineraries", label: "Itineraries" }, // ✅ New route
   ];
 
   // derive active menu based on current path or hash
