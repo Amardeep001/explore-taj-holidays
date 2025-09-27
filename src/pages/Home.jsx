@@ -3,10 +3,9 @@ import Hero from "../components/Hero";
 import TourCard from "../components/TourCard";
 import WhyChooseUs from "../components/WhyChooseUs";
 import About from "../components/About";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import Contact from "../components/Contact";
 import LocationMap from "../components/LocationMap";
+import { Helmet } from "react-helmet-async";
 
 export default function Home() {
   useEffect(() => {
@@ -46,6 +45,53 @@ export default function Home() {
 
   return (
     <>
+      <Helmet>
+        <title>
+          Explore Taj Holidays | Taj Mahal Tours & Agra Travel Packages
+        </title>
+        <meta
+          name="description"
+          content="Plan your Agra trip with Explore Taj Holidays. Book Taj Mahal tours, Golden Triangle packages, private guided tours, and custom itineraries for an unforgettable experience."
+        />
+        <meta
+          name="keywords"
+          content="Explore Taj Holidays, Agra tours, Taj Mahal tours, Golden Triangle tour, private guided tours, travel packages, custom itineraries, Agra sightseeing"
+        />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://www.exploretajholidays.com/" />
+
+        {/* Open Graph */}
+        <meta
+          property="og:title"
+          content="Explore Taj Holidays | Taj Mahal Tours & Agra Travel Packages"
+        />
+        <meta
+          property="og:description"
+          content="Plan your Agra trip with Explore Taj Holidays. Book Taj Mahal tours, Golden Triangle packages, private guided tours, and custom itineraries for an unforgettable experience."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.exploretajholidays.com/" />
+        <meta
+          property="og:image"
+          content="https://exploretajholidays-assets.s3.ap-south-1.amazonaws.com/images/travel_experience.jpeg"
+        />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Explore Taj Holidays | Taj Mahal Tours & Agra Travel Packages"
+        />
+        <meta
+          name="twitter:description"
+          content="Plan your Agra trip with Explore Taj Holidays. Book Taj Mahal tours, Golden Triangle packages, private guided tours, and custom itineraries for an unforgettable experience."
+        />
+        <meta
+          name="twitter:image"
+          content="https://exploretajholidays-assets.s3.ap-south-1.amazonaws.com/images/travel_experience.jpeg"
+        />
+      </Helmet>
+
       {/* Hero Section */}
       <Hero />
 

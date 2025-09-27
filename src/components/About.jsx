@@ -1,5 +1,6 @@
 import React from "react";
-import tourismImage from "../assets/agra_tourism.jpg";
+const tourismImage =
+  "https://exploretajholidays-assets.s3.ap-south-1.amazonaws.com/images/agra_tourism.jpg";
 
 const About = () => {
   return (
