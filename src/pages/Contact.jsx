@@ -7,6 +7,35 @@ export default function Contact() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+
+    const data = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      message: formData.get("message"),
+    };
+
+    try {
+      const res = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (res.ok) {
+        alert("Message sent successfully ✅");
+        e.target.reset();
+      } else {
+        alert("Failed to send message ❌");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Something went wrong!");
+    }
+  };
+
   return (
     <div className="bg-gray-50 min-h-screen pb-16">
       {/* Banner */}
@@ -59,7 +88,7 @@ export default function Contact() {
           <h3 className="text-2xl font-semibold mb-6 text-gray-900">
             Send Us a Message
           </h3>
-          <form className="space-y-5">
+          <form className="space-y-5" onSubmit={handleSubmit}>
             <div>
               <label className="block text-sm font-medium text-gray-700">
                 Name
