@@ -25,14 +25,14 @@ export default function Contact() {
       });
 
       if (res.ok) {
-        alert("Message sent successfully ✅");
+        alert("✅ Message sent successfully!");
         e.target.reset();
       } else {
-        alert("Failed to send message ❌");
+        alert("❌ Failed to send message. Try again.");
       }
     } catch (err) {
       console.error(err);
-      alert("Something went wrong!");
+      alert("⚠️ Something went wrong!");
     }
   };
 
@@ -95,6 +95,7 @@ export default function Contact() {
               </label>
               <input
                 type="text"
+                name="name"
                 placeholder="Enter your name"
                 className="w-full mt-1 px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-yellow-500 outline-none"
                 required
@@ -106,6 +107,7 @@ export default function Contact() {
               </label>
               <input
                 type="email"
+                name="email"
                 placeholder="Enter your email"
                 className="w-full mt-1 px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-yellow-500 outline-none"
                 required
@@ -116,6 +118,7 @@ export default function Contact() {
                 Message
               </label>
               <textarea
+                name="message"
                 rows="4"
                 placeholder="Write your query or suggestion..."
                 className="w-full mt-1 px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-yellow-500 outline-none"
