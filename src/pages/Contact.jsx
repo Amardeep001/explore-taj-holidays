@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, MessageCircle } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 
 const contactImage =
@@ -144,6 +144,17 @@ export default function Contact() {
                 <span className="text-gray-800 text-lg font-medium">
                   Agra, Uttar Pradesh, India
                 </span>
+              </div>
+              <div className="flex items-center gap-4">
+                <MessageCircle className="text-yellow-500" />
+                <a
+                  href="https://wa.me/917017149405?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20Taj%20Mahal%20tours."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-800 text-lg font-medium hover:text-green-600 transition"
+                >
+                  Chat with us on WhatsApp
+                </a>
               </div>
             </div>
           </div>
