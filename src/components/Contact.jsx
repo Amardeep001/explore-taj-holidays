@@ -34,11 +34,17 @@ export default function Contact() {
                 <p className="text-gray-300 text-sm">📍 Uttar Pradesh</p>
               </div>
 
-              <div className="bg-white/10 backdrop-blur-md p-6 rounded-2xl shadow-lg hover:shadow-2xl transition border border-white/10">
-                <FaPhoneAlt className="text-green-400 text-3xl mb-3 mx-auto" />
-                <p className="font-semibold text-white">+91-7017149405</p>
-                <p className="text-gray-300 text-sm">📱 Phone / WhatsApp</p>
-              </div>
+              <a
+                href="https://wa.me/917017149405?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20Taj%20Mahal%20tours."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className="bg-white/10 backdrop-blur-md p-6 rounded-2xl shadow-lg hover:shadow-2xl transition border border-white/10">
+                  <FaPhoneAlt className="text-green-400 text-3xl mb-3 mx-auto" />
+                  <p className="font-semibold text-white">+91-7017149405</p>
+                  <p className="text-gray-300 text-sm">📱 Phone / WhatsApp</p>
+                </div>
+              </a>
 
               <div className="bg-white/10 backdrop-blur-md p-6 rounded-2xl shadow-lg hover:shadow-2xl transition border border-white/10">
                 <FaEnvelope className="text-pink-400 text-3xl mb-3 mx-auto" />
