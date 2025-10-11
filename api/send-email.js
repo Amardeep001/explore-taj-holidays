@@ -33,6 +33,7 @@ export default async function handler(req, res) {
     await transporter.sendMail({
       from: `"ExploreTaj Holidays" <${email}>`,
       to: "myamardeepsingh001@gmail.com",
+      replyTo: email,
       subject: "📩 New Contact Form Submission for Explore Taj Travels.",
       html: htmlTemplate,
     });

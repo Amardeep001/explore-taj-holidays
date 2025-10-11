@@ -1,19 +1,22 @@
-import React, { useEffect } from "react";
-import { Mail, Phone, MapPin, MessageCircle } from "lucide-react";
+import React, { useEffect, useState } from "react";
+import { Mail, Phone, MapPin, MessageCircle, Loader2 } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 
 const contactImage =
   "https://exploretajholidays-assets.s3.ap-south-1.amazonaws.com/images/contact.png";
 
 export default function Contact() {
+  const [loading, setLoading] = useState(false);
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const formData = new FormData(e.target);
+    setLoading(true);
 
+    const formData = new FormData(e.target);
     const data = {
       name: formData.get("name"),
       email: formData.get("email"),
@@ -36,6 +39,8 @@ export default function Contact() {
     } catch (err) {
       console.error(err);
       alert("⚠️ Something went wrong!");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -102,6 +107,16 @@ export default function Contact() {
         <meta name="twitter:image" content={contactImage} />
       </Helmet>
 
+      {/* Loader Overlay */}
+      {loading && (
+        <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
+          <div className="flex flex-col items-center text-white">
+            <Loader2 className="animate-spin w-10 h-10 mb-3" />
+            <p className="text-lg font-semibold">Sending your message...</p>
+          </div>
+        </div>
+      )}
+
       <div className="bg-gray-50 min-h-screen pb-16">
         {/* Banner */}
         <section
@@ -116,7 +131,7 @@ export default function Contact() {
           </h1>
         </section>
 
-        {/* Contact Details + Form */}
+        {/* Contact Section */}
         <section className="w-full mx-auto px-6 lg:px-10 mt-12 grid md:grid-cols-2 gap-10">
           {/* Contact Info */}
           <div className="space-y-6">
@@ -203,9 +218,14 @@ export default function Contact() {
               </div>
               <button
                 type="submit"
-                className="w-full bg-yellow-500 text-white py-3 rounded-lg font-semibold hover:bg-yellow-600 transition duration-300"
+                disabled={loading}
+                className={`w-full py-3 rounded-lg font-semibold text-white transition duration-300 ${
+                  loading
+                    ? "bg-yellow-400 cursor-not-allowed"
+                    : "bg-yellow-500 hover:bg-yellow-600"
+                }`}
               >
-                Send Message
+                {loading ? "Sending..." : "Send Message"}
               </button>
             </form>
           </div>
