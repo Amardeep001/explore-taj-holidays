@@ -21,7 +21,7 @@ export default function Contact() {
         </p>
 
         {/* Contact Info Cards Section */}
-        <section className="w-full py-20 rounded-md bg-gradient-to-br from-indigo-950 via-purple-900 to-indigo-900">
+        <section className="w-full py-20 rounded-lg bg-gradient-to-br from-indigo-950 via-purple-900 to-indigo-900">
           <div className="max-w-6xl mx-auto px-6">
             <h2 className="text-3xl font-bold text-center text-white mb-12">
               Get in Touch

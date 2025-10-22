@@ -59,7 +59,7 @@ export default function Home() {
           name="keywords"
           content="
       Explore Taj Holidays, 
-      Explore Taj Travels
+      Explore Taj Travels,
       Agra tours, 
       Taj Mahal tours, 
       Agra sightseeing, 
