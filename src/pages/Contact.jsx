@@ -180,7 +180,7 @@ export default function Contact() {
               <div className="flex items-center gap-4">
                 <Mail className="text-yellow-500" />
                 <span className="text-gray-800 text-lg font-medium">
-                  info@exploretajholidays.com
+                  exploretajholiday@gmail.com
                 </span>
               </div>
               <div className="flex items-center gap-4">

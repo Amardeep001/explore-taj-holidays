@@ -49,7 +49,7 @@ export default function Contact() {
               <div className="bg-white/10 backdrop-blur-md p-6 rounded-2xl shadow-lg hover:shadow-2xl transition border border-white/10">
                 <FaEnvelope className="text-pink-400 text-3xl mb-3 mx-auto" />
                 <p className="font-semibold text-white">
-                  info@exploretajholidays.com
+                  exploretajholiday@gmail.com
                 </p>
                 <p className="text-gray-300 text-sm">✉️ Drop us an email</p>
               </div>

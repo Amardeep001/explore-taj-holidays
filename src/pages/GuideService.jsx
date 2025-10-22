@@ -347,7 +347,7 @@ export default function GuideServicePage() {
               your experience is safe, smooth, and enriching.
             </p>
             <p className="mb-4">📞 Phone: +91-7017149405</p>
-            <p className="mb-4">📧 Email: info@exploretajholidays.com</p>
+            <p className="mb-4">📧 Email: exploretajholiday@gmail.com</p>
             <p className="mb-8">📍 Location: Agra, Uttar Pradesh, India</p>
             <Link
               to="/contact"

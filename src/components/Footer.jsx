@@ -60,7 +60,7 @@ export default function Footer() {
           <ul className="space-y-2 text-sm">
             <li>📍 Agra, Uttar Pradesh, India</li>
             <li>📞 +91 7017149405</li>
-            <li>✉️ info@exploretajholidays.com</li>
+            <li>✉️ exploretajholiday@gmail.com</li>
           </ul>
         </div>
       </div>
