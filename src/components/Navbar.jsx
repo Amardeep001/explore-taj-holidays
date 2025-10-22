@@ -12,10 +12,9 @@ export default function Navbar() {
     { id: "/contact", label: "Contact" },
     { id: "/guides", label: "Guide" },
     { id: "/car-rental", label: "Car Rental" },
-    { id: "/itineraries", label: "Itineraries" }, // ✅ New route
+    { id: "/itineraries", label: "Itineraries" },
   ];
 
-  // derive active menu based on current path or hash
   const isActive = (id) => {
     if (id.startsWith("/")) {
       return location.pathname === id;
@@ -26,10 +25,19 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 w-full bg-gradient-to-r from-gray-900 via-gray-800 to-black shadow-lg z-50">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-        {/* Logo / Brand */}
-        <h1 className="text-2xl font-extrabold text-white tracking-wide">
-          Explore Taj Holidays
-        </h1>
+        {/* Logo + Brand */}
+        <div className="flex items-center space-x-4">
+          {/* Logo Image */}
+          <img
+            src="/logo.jpg" // 🖼️ replace this with your actual logo path (e.g., /assets/logo.png)
+            alt="Explore Taj Holidays Logo"
+            className="h-14 w-14 object-contain bg-transparent rounded-full " // ensures no white background
+            // style={{ mixBlendMode: "multiply" }}
+          />
+          <h1 className="text-2xl font-extrabold text-white tracking-wide">
+            Explore Taj Holidays
+          </h1>
+        </div>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-8 text-gray-200 font-medium text-sm uppercase">

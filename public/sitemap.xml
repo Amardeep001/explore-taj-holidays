@@ -1,24 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
+<urlset 
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Home Page -->
   <url>
     <loc>https://www.exploretajholidays.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
+  <!-- About Page -->
   <url>
     <loc>https://www.exploretajholidays.com/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
+  <!-- Contact Page -->
   <url>
     <loc>https://www.exploretajholidays.com/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
+  <!-- Guides Page -->
+  <url>
+    <loc>https://www.exploretajholidays.com/guides</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Car Rental Page -->
+  <url>
+    <loc>https://www.exploretajholidays.com/car-rental</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Itineraries Page -->
   <url>
     <loc>https://www.exploretajholidays.com/itineraries</loc>
     <changefreq>monthly</changefreq>

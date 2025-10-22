@@ -47,30 +47,59 @@ export default function Contact() {
   return (
     <>
       <Helmet>
-        <script type="application/ld+json">
-          {`
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Explore Taj Holidays",
-        "url": "https://www.exploretajholidays.com",
-        "logo": "https://exploretajholidays-assets.s3.ap-south-1.amazonaws.com/images/logo.png",
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "telephone": "+91-7017149405",
-          "contactType": "Customer Service"
-        }
-      }
-    `}
-        </script>
+        {/* ✅ JSON-LD Schema (fixed formatting + validation) */}
+        <script type="application/ld+json">{`
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Explore Taj Holidays",
+      "url": "https://www.exploretajholidays.com",
+      "logo": "https://exploretajholidays-assets.s3.ap-south-1.amazonaws.com/images/logo.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-7017149405",
+        "contactType": "Customer Service",
+        "areaServed": "IN",
+        "availableLanguage": ["English", "Hindi"]
+      },
+      "sameAs": [
+        "https://www.facebook.com/exploretajholidays",
+        "https://www.instagram.com/exploretajholidays",
+        "https://www.linkedin.com/company/explore-taj-holidays"
+      ]
+    }
+  `}</script>
+
+        {/* Page Metadata */}
         <title>Contact Explore Taj Holidays | Plan Your Trip to Agra</title>
         <meta
           name="description"
-          content="Get in touch with Explore Taj Holidays for Taj Mahal tours, Agra travel packages, and custom itineraries. Contact our DOT-approved guides for personalized assistance."
+          content="Get in touch with Explore Taj Holidays for Taj Mahal tours, Agra sightseeing, Golden Triangle trips, and custom India travel packages. Speak directly with DOT-approved guides for personalized assistance."
         />
         <meta
           name="keywords"
-          content="Explore Taj Holidays, Contact, Agra tours, Taj Mahal tours, Travel packages, DOT-approved guides, Custom itineraries, Agra travel"
+          content="
+      Explore Taj Holidays, 
+      contact Explore Taj Holidays, 
+      Agra tour operator, 
+      Taj Mahal tours, 
+      Golden Triangle travel, 
+      Agra travel agency, 
+      India tour contact, 
+      DOT approved guides, 
+      Agra tourism office, 
+      Agra sightseeing packages, 
+      custom itineraries, 
+      private guided tours, 
+      travel booking Agra, 
+      local travel agency Agra, 
+      tour operator near Taj Mahal, 
+      best Agra tour company, 
+      car rental contact Agra, 
+      same day Agra tour, 
+      Delhi Agra Jaipur tour contact, 
+      holiday planner Agra
+    "
         />
         <meta name="robots" content="index, follow" />
         <link
@@ -85,7 +114,7 @@ export default function Contact() {
         />
         <meta
           property="og:description"
-          content="Reach out to Explore Taj Holidays for guided tours, travel packages, and custom itineraries in Agra. DOT-approved guides ready to assist you."
+          content="Reach out to Explore Taj Holidays for guided tours, private car rentals, and personalized itineraries in Agra. DOT-approved guides ready to assist you."
         />
         <meta property="og:type" content="website" />
         <meta
@@ -102,7 +131,7 @@ export default function Contact() {
         />
         <meta
           name="twitter:description"
-          content="Reach out to Explore Taj Holidays for guided tours, travel packages, and custom itineraries in Agra. DOT-approved guides ready to assist you."
+          content="Reach out to Explore Taj Holidays for guided tours, private car rentals, and custom itineraries in Agra. DOT-approved guides ready to assist you."
         />
         <meta name="twitter:image" content={contactImage} />
       </Helmet>

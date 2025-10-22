@@ -23,14 +23,43 @@ export default function CarRentalPage() {
     <>
       <Helmet>
         <title>Car Rental Services in Agra – Explore Taj Holidays</title>
+
         <meta
           name="description"
-          content="Explore Taj Holidays offers comfortable, safe, and affordable car rental services in Agra. Choose from sedans, SUVs, luxury cars, and minivans for your city tours, intercity transfers, and custom trips."
+          content="Book reliable and affordable car rental services in Agra with Explore Taj Holidays. Choose from sedans, SUVs, luxury cars, and tempo travellers for Taj Mahal tours, sightseeing, airport transfers, and Golden Triangle trips."
         />
+
         <meta
           name="keywords"
-          content="Car rental Agra, Taj Mahal tour car, Agra car service, Explore Taj Holidays, Sedan rental, SUV rental, Luxury cars Agra, Minivan rental"
+          content="
+      Car rental Agra, 
+      Taj Mahal car hire, 
+      Explore Taj Holidays, 
+      Agra taxi service, 
+      Agra sightseeing car rental, 
+      Golden Triangle car rental, 
+      Delhi Agra Jaipur car hire, 
+      sedan rental Agra, 
+      SUV rental Agra, 
+      luxury car rental Agra, 
+      tempo traveller Agra, 
+      airport transfer Agra, 
+      outstation taxi Agra, 
+      private driver Agra, 
+      Agra car booking, 
+      car hire for Taj Mahal, 
+      best car rental in Agra, 
+      affordable cab service Agra, 
+      local Agra car rental, 
+      chauffeur driven cars Agra, 
+      Agra to Jaipur taxi, 
+      Agra to Delhi car hire, 
+      Agra tour car service, 
+      sightseeing taxi Agra, 
+      Agra travel agency car rental
+    "
         />
+
         <meta name="robots" content="index, follow" />
         <link
           rel="canonical"
@@ -44,7 +73,7 @@ export default function CarRentalPage() {
         />
         <meta
           property="og:description"
-          content="Comfortable, safe, and affordable rides in Agra with professional drivers. Book your car today!"
+          content="Comfortable, safe, and affordable rides in Agra with professional drivers. Choose from sedans, SUVs, and luxury cars for sightseeing or intercity transfers."
         />
         <meta property="og:type" content="website" />
         <meta
@@ -61,7 +90,7 @@ export default function CarRentalPage() {
         />
         <meta
           name="twitter:description"
-          content="Comfortable, safe, and affordable rides in Agra with professional drivers. Book your car today!"
+          content="Book professional, affordable car rentals in Agra with Explore Taj Holidays. Perfect for Taj Mahal tours, airport transfers, and Golden Triangle trips."
         />
         <meta name="twitter:image" content={carRentalImage} />
       </Helmet>

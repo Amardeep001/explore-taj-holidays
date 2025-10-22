@@ -49,14 +49,45 @@ export default function Home() {
         <title>
           Explore Taj Holidays | Taj Mahal Tours & Agra Travel Packages
         </title>
+
         <meta
           name="description"
-          content="Plan your Agra trip with Explore Taj Holidays. Book Taj Mahal tours, Golden Triangle packages, private guided tours, and custom itineraries for an unforgettable experience."
+          content="Plan your Agra trip with Explore Taj Holidays. Book Taj Mahal tours, Golden Triangle packages, private guided tours, car rentals, and custom itineraries across India for an unforgettable travel experience."
         />
+
         <meta
           name="keywords"
-          content="Explore Taj Holidays, Agra tours, Taj Mahal tours, Golden Triangle tour, private guided tours, travel packages, custom itineraries, Agra sightseeing"
+          content="
+      Explore Taj Holidays, 
+      Explore Taj Travels
+      Agra tours, 
+      Taj Mahal tours, 
+      Agra sightseeing, 
+      Golden Triangle tour, 
+      Delhi Agra Jaipur tour, 
+      private guided tours, 
+      India travel packages, 
+      same day Agra tour, 
+      sunrise Taj Mahal tour, 
+      Agra tour by car, 
+      Agra car rental, 
+      Taj Mahal day trip, 
+      Jaipur Agra tour, 
+      Delhi Agra tour, 
+      Agra fort tour, 
+      Fatehpur Sikri tour, 
+      North India tour packages, 
+      cultural heritage tours, 
+      custom itineraries, 
+      local Agra guide, 
+      best Taj Mahal tour operator, 
+      holiday packages India, 
+      Golden Triangle travel agency, 
+      private driver Agra, 
+      Explore Taj Holidays reviews
+    "
         />
+
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://www.exploretajholidays.com/" />
 
@@ -67,7 +98,7 @@ export default function Home() {
         />
         <meta
           property="og:description"
-          content="Plan your Agra trip with Explore Taj Holidays. Book Taj Mahal tours, Golden Triangle packages, private guided tours, and custom itineraries for an unforgettable experience."
+          content="Book private Taj Mahal and Agra tours with Explore Taj Holidays. Enjoy guided sightseeing, car rentals, and custom Golden Triangle travel packages."
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.exploretajholidays.com/" />
@@ -84,7 +115,7 @@ export default function Home() {
         />
         <meta
           name="twitter:description"
-          content="Plan your Agra trip with Explore Taj Holidays. Book Taj Mahal tours, Golden Triangle packages, private guided tours, and custom itineraries for an unforgettable experience."
+          content="Plan your perfect Agra getaway. Explore the Taj Mahal, Agra Fort, and Fatehpur Sikri with private guides and custom itineraries from Explore Taj Holidays."
         />
         <meta
           name="twitter:image"

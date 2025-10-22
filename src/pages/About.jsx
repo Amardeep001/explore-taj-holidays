@@ -19,14 +19,43 @@ export default function About() {
         <title>
           About Explore Taj Holidays | Trusted Travel Partner in Agra
         </title>
+
         <meta
           name="description"
-          content="Learn about Explore Taj Holidays, your trusted tour operator for Taj Mahal tours, Agra sightseeing, and Golden Triangle travel packages. DOT-approved guides and personalized experiences since 2012."
+          content="Learn about Explore Taj Holidays — a trusted Agra-based travel agency offering Taj Mahal tours, Golden Triangle packages, licensed guides, and personalized experiences across North India since 2012."
         />
+
         <meta
           name="keywords"
-          content="Explore Taj Holidays, About us, Agra tours, DOT approved guides, Taj Mahal tours, Golden Triangle travel, Agra sightseeing, Travel agency"
+          content="
+      Explore Taj Holidays, 
+      About Explore Taj Holidays, 
+      Agra travel agency, 
+      Agra tour operator, 
+      DOT approved guides, 
+      Taj Mahal tours, 
+      Golden Triangle travel, 
+      Delhi Agra Jaipur tours, 
+      private guided tours in Agra, 
+      local Agra guides, 
+      licensed tour guides India, 
+      Agra sightseeing packages, 
+      North India heritage tours, 
+      Indian cultural tours, 
+      Agra tourism company, 
+      best travel agency in Agra, 
+      Taj Mahal day trips, 
+      sunrise Taj Mahal guide, 
+      Agra fort guided tour, 
+      personalized itineraries India, 
+      Explore Taj Holidays reviews, 
+      professional tour operator Agra, 
+      custom India travel packages, 
+      private car hire Agra, 
+      best Agra travel company
+    "
         />
+
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://www.exploretajholidays.com/about" />
 
@@ -37,7 +66,7 @@ export default function About() {
         />
         <meta
           property="og:description"
-          content="Explore Taj Holidays offers DOT-approved guides, guided tours, car rentals, and personalized travel experiences in Agra."
+          content="Explore Taj Holidays offers DOT-approved guides, private car rentals, Taj Mahal tours, and personalized Golden Triangle travel experiences from Agra."
         />
         <meta property="og:type" content="website" />
         <meta
@@ -54,7 +83,7 @@ export default function About() {
         />
         <meta
           name="twitter:description"
-          content="Explore Taj Holidays offers DOT-approved guides, guided tours, car rentals, and personalized travel experiences in Agra."
+          content="Explore Taj Holidays offers DOT-approved guides, private car rentals, Taj Mahal tours, and personalized Golden Triangle travel experiences from Agra."
         />
         <meta name="twitter:image" content={aboutImage} />
       </Helmet>

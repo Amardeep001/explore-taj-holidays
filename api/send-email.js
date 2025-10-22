@@ -31,10 +31,10 @@ export default async function handler(req, res) {
     `;
 
     await transporter.sendMail({
-      from: `"ExploreTaj Holidays" <myamardeepsingh001@gmail.com>`,
-      to: "jitendrachauhan36@yahoo.com",
+      from: `"Explore Taj Holidays" <myamardeepsingh001@gmail.com>`,
+      to: "exploretajholiday@gmail.com",
       replyTo: email,
-      subject: "📩 New Contact Form Submission for Explore Taj Travels.",
+      subject: "📩 New Contact Form Submission for Explore Taj Holidays.",
       html: htmlTemplate,
     });
 

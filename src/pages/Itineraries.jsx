@@ -43,31 +43,95 @@ export default function Itineraries() {
   return (
     <>
       <Helmet>
+        {/* ✅ JSON-LD Schema for Itineraries / Tour Packages */}
+        <script type="application/ld+json">{`
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Taj Mahal & Agra Tour Itineraries - Explore Taj Holidays",
+      "url": "https://www.exploretajholidays.com/itineraries",
+      "description": "Discover curated itineraries for Taj Mahal, Agra, and Golden Triangle tours with Explore Taj Holidays.",
+      "numberOfItems": "5",
+      "itemListElement": [
+        {
+          "@type": "TouristTrip",
+          "name": "Same Day Delhi-Agra Tour by Car",
+          "url": "https://www.exploretajholidays.com/itineraries/same-day-delhi-agra",
+          "description": "Enjoy a private same-day trip from Delhi to Agra with a licensed guide and comfortable vehicle."
+        },
+        {
+          "@type": "TouristTrip",
+          "name": "Sunrise Taj Mahal Tour",
+          "url": "https://www.exploretajholidays.com/itineraries/sunrise-taj-mahal",
+          "description": "Witness the Taj Mahal at sunrise with an expert guide, including Agra Fort and local crafts visit."
+        },
+        {
+          "@type": "TouristTrip",
+          "name": "Golden Triangle Tour (Delhi-Agra-Jaipur)",
+          "url": "https://www.exploretajholidays.com/itineraries/golden-triangle",
+          "description": "Explore India's most iconic destinations in this 3-city cultural journey with private transfers and hotels."
+        },
+        {
+          "@type": "TouristTrip",
+          "name": "Agra Heritage Walk & Local Experience",
+          "url": "https://www.exploretajholidays.com/itineraries/agra-heritage-walk",
+          "description": "Discover the heritage lanes of Agra with local stories, cuisine, and hidden gems guided by DOT experts."
+        },
+        {
+          "@type": "TouristTrip",
+          "name": "Custom Agra Tour Packages",
+          "url": "https://www.exploretajholidays.com/itineraries/custom-tours",
+          "description": "Design your own Agra or North India itinerary with Explore Taj Holidays’ personalized trip planning."
+        }
+      ]
+    }
+  `}</script>
+
+        {/* ✅ Meta Title & Description */}
         <title>
           Itineraries | Taj Mahal & Agra Tours with Explore Taj Holidays
         </title>
         <meta
           name="description"
-          content="Browse our handpicked itineraries including Same Day Delhi-Agra tours, Sunrise Taj Mahal visit, and customized travel packages with Explore Taj Holidays."
+          content="Explore curated Taj Mahal and Agra itineraries including Same Day Delhi-Agra tours, Sunrise Taj visits, Golden Triangle trips, and customizable travel packages with Explore Taj Holidays."
         />
+
+        {/* ✅ Extended SEO Keywords */}
         <meta
           name="keywords"
-          content="Itineraries, Taj Mahal tours, Agra travel packages, Same Day Delhi-Agra tour, Sunrise Taj Mahal visit, custom travel packages, Explore Taj Holidays"
+          content="
+      Agra itineraries,
+      Taj Mahal tour packages,
+      Explore Taj Holidays itineraries,
+      Same Day Delhi Agra tour,
+      Sunrise Taj Mahal tour,
+      Golden Triangle tour,
+      Agra sightseeing packages,
+      Agra private tours,
+      custom India travel packages,
+      Delhi Agra Jaipur trip,
+      Agra day trips,
+      best Agra tours,
+      Taj Mahal sunrise itinerary,
+      luxury Agra tours,
+      family travel packages India
+    "
         />
+
         <meta name="robots" content="index, follow" />
         <link
           rel="canonical"
           href="https://www.exploretajholidays.com/itineraries"
         />
 
-        {/* Open Graph */}
+        {/* ✅ Open Graph (Facebook, WhatsApp, LinkedIn) */}
         <meta
           property="og:title"
           content="Itineraries | Taj Mahal & Agra Tours with Explore Taj Holidays"
         />
         <meta
           property="og:description"
-          content="Browse our handpicked itineraries including Same Day Delhi-Agra tours, Sunrise Taj Mahal visit, and customized travel packages with Explore Taj Holidays."
+          content="Browse our curated itineraries including Same Day Delhi-Agra tours, Sunrise Taj Mahal visits, and Golden Triangle packages with Explore Taj Holidays."
         />
         <meta property="og:type" content="website" />
         <meta
@@ -79,7 +143,7 @@ export default function Itineraries() {
           content="https://exploretajholidays-assets.s3.ap-south-1.amazonaws.com/images/travel_experience.jpeg"
         />
 
-        {/* Twitter Card */}
+        {/* ✅ Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
@@ -87,7 +151,7 @@ export default function Itineraries() {
         />
         <meta
           name="twitter:description"
-          content="Browse our handpicked itineraries including Same Day Delhi-Agra tours, Sunrise Taj Mahal visit, and customized travel packages with Explore Taj Holidays."
+          content="Discover handpicked itineraries for Taj Mahal and Agra tours — Same Day Trips, Sunrise Visits, and Golden Triangle packages by Explore Taj Holidays."
         />
         <meta
           name="twitter:image"

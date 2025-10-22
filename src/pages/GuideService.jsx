@@ -33,14 +33,64 @@ export default function GuideServicePage() {
   return (
     <>
       <Helmet>
+        {/* ✅ JSON-LD Schema for DOT Approved Guides */}
+        <script type="application/ld+json">{`
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Explore Taj Holidays - DOT Approved Tour Guides",
+      "image": "https://exploretajholidays-assets.s3.ap-south-1.amazonaws.com/images/guide-banner.jpg",
+      "@id": "https://www.exploretajholidays.com/guide-service",
+      "url": "https://www.exploretajholidays.com/guide-service",
+      "telephone": "+91-7017149405",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1813/1K, Fatehabad Rd, opp. Hotel Trident, near Prerna Apartment",
+        "addressLocality": "Agra",
+        "addressRegion": "Uttar Pradesh",
+        "postalCode": "282006",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "27.1673",
+        "longitude": "78.0419"
+      },
+      "openingHours": "Mo-Su 10:00-19:00",
+      "priceRange": "₹₹",
+      "sameAs": [
+        "https://www.facebook.com/exploretajholidays",
+        "https://www.instagram.com/exploretajholidays"
+      ],
+      "description": "DOT approved and multilingual tour guides in Agra offering personalized Taj Mahal and heritage tours with Explore Taj Holidays."
+    }
+  `}</script>
+
+        {/* SEO Title & Meta Tags */}
         <title>DOT Approved Tour Guides in Agra – Explore Taj Holidays</title>
         <meta
           name="description"
-          content="Explore Agra with licensed Department of Tourism (DOT) approved guides. Experience personalized tours, historical insights, multilingual support, and safe travel with Explore Taj Holidays."
+          content="Explore Agra with licensed Department of Tourism (DOT) approved guides. Enjoy heritage walks, Taj Mahal tours, and custom sightseeing with multilingual, professional guides from Explore Taj Holidays."
         />
         <meta
           name="keywords"
-          content="DOT tour guides Agra, Explore Taj Holidays guides, Agra city tours, Taj Mahal guide, Heritage walks Agra, Personalized tours, Licensed guides"
+          content="
+      DOT approved tour guides Agra,
+      Agra tour guide service,
+      Explore Taj Holidays guides,
+      Taj Mahal guide booking,
+      Heritage walk Agra,
+      Agra sightseeing tours,
+      multilingual guides Agra,
+      private guided tours Agra,
+      licensed tour guides Uttar Pradesh,
+      best guides in Agra,
+      government approved guides Taj Mahal,
+      Agra city tour guide,
+      local travel guide Agra,
+      Agra tourism guide service,
+      Delhi Agra Jaipur guide package
+    "
         />
         <meta name="robots" content="index, follow" />
         <link
@@ -48,14 +98,14 @@ export default function GuideServicePage() {
           href="https://www.exploretajholidays.com/guide-service"
         />
 
-        {/* Open Graph */}
+        {/* Open Graph (Facebook, WhatsApp, LinkedIn) */}
         <meta
           property="og:title"
           content="DOT Approved Tour Guides in Agra – Explore Taj Holidays"
         />
         <meta
           property="og:description"
-          content="Explore Agra with licensed DOT approved guides. Personalized tours, multilingual support, and safe travel guaranteed!"
+          content="Experience Agra with DOT approved multilingual guides. Personalized Taj Mahal tours, heritage walks, and custom sightseeing by Explore Taj Holidays."
         />
         <meta property="og:type" content="website" />
         <meta
@@ -72,10 +122,11 @@ export default function GuideServicePage() {
         />
         <meta
           name="twitter:description"
-          content="Explore Agra with licensed DOT approved guides. Personalized tours, multilingual support, and safe travel guaranteed!"
+          content="Book DOT approved tour guides in Agra for Taj Mahal and heritage tours. Personalized experiences with multilingual experts from Explore Taj Holidays."
         />
         <meta name="twitter:image" content={guideBanner} />
       </Helmet>
+
       <main className="w-full bg-gradient-to-br from-[#fff8f5] via-white to-[#fdfdfd] min-h-screen">
         {/* Hero Section */}
         <section
