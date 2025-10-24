@@ -17,42 +17,44 @@ export default function About() {
     <>
       <Helmet>
         <title>
-          About Explore Taj Holidays | Trusted Travel Partner in Agra
+          About Explore Taj Holidays | Trusted Agra Tour Operator & Travel
+          Agency
         </title>
 
         <meta
           name="description"
-          content="Learn about Explore Taj Holidays — a trusted Agra-based travel agency offering Taj Mahal tours, Golden Triangle packages, licensed guides, and personalized experiences across North India since 2012."
+          content="Discover Explore Taj Holidays — a government-recognized travel agency in Agra offering Taj Mahal tours, Golden Triangle packages, DOT-approved guides, and private car rentals across North India. Providing exceptional travel experiences since 2012."
         />
 
         <meta
           name="keywords"
           content="
-      Explore Taj Holidays, 
-      About Explore Taj Holidays, 
-      Agra travel agency, 
-      Agra tour operator, 
-      DOT approved guides, 
-      Taj Mahal tours, 
-      Golden Triangle travel, 
-      Delhi Agra Jaipur tours, 
-      private guided tours in Agra, 
-      local Agra guides, 
-      licensed tour guides India, 
-      Agra sightseeing packages, 
-      North India heritage tours, 
-      Indian cultural tours, 
-      Agra tourism company, 
-      best travel agency in Agra, 
-      Taj Mahal day trips, 
-      sunrise Taj Mahal guide, 
-      Agra fort guided tour, 
-      personalized itineraries India, 
-      Explore Taj Holidays reviews, 
-      professional tour operator Agra, 
-      custom India travel packages, 
-      private car hire Agra, 
-      best Agra travel company
+      Explore Taj Holidays,
+      About Explore Taj Holidays,
+      Agra tour operator,
+      Agra travel agency,
+      DOT approved guides,
+      licensed tour guides India,
+      Taj Mahal tour company,
+      Golden Triangle tour operator,
+      Delhi Agra Jaipur tours,
+      same day Agra tour,
+      private guided tours in Agra,
+      local Agra guides,
+      government approved guide Agra,
+      professional tour operator India,
+      Agra sightseeing packages,
+      cultural heritage tours India,
+      best Agra travel agency,
+      Taj Mahal day trip from Delhi,
+      sunrise Taj Mahal guide service,
+      Agra fort guided tour,
+      Fatehpur Sikri guide,
+      Agra tourism company,
+      private car hire Agra,
+      North India travel packages,
+      Explore Taj Holidays reviews,
+      trusted travel agency in Agra
     "
         />
 
@@ -62,11 +64,11 @@ export default function About() {
         {/* Open Graph */}
         <meta
           property="og:title"
-          content="About Explore Taj Holidays | Trusted Travel Partner in Agra"
+          content="About Explore Taj Holidays | Trusted Agra Tour Operator & Travel Agency"
         />
         <meta
           property="og:description"
-          content="Explore Taj Holidays offers DOT-approved guides, private car rentals, Taj Mahal tours, and personalized Golden Triangle travel experiences from Agra."
+          content="Explore Taj Holidays — your trusted Agra travel partner since 2012. Specializing in Taj Mahal tours, Golden Triangle trips, licensed guides, and private car rentals across North India."
         />
         <meta property="og:type" content="website" />
         <meta
@@ -79,11 +81,11 @@ export default function About() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="About Explore Taj Holidays | Trusted Travel Partner in Agra"
+          content="About Explore Taj Holidays | Trusted Agra Tour Operator & Travel Agency"
         />
         <meta
           name="twitter:description"
-          content="Explore Taj Holidays offers DOT-approved guides, private car rentals, Taj Mahal tours, and personalized Golden Triangle travel experiences from Agra."
+          content="Explore Taj Holidays offers DOT-approved guides, private tours, and customized Golden Triangle travel packages. Based in Agra, we deliver memorable India experiences since 2012."
         />
         <meta name="twitter:image" content={aboutImage} />
       </Helmet>

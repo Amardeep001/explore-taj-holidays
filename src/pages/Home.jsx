@@ -47,43 +47,44 @@ export default function Home() {
     <>
       <Helmet>
         <title>
-          Explore Taj Holidays | Taj Mahal Tours & Agra Travel Packages
+          Explore Taj Holidays | Taj Mahal Tours, Same Day Agra Trips & Golden
+          Triangle Packages
         </title>
 
         <meta
           name="description"
-          content="Plan your Agra trip with Explore Taj Holidays. Book Taj Mahal tours, Golden Triangle packages, private guided tours, car rentals, and custom itineraries across India for an unforgettable travel experience."
+          content="Book private Taj Mahal and Agra tours with Explore Taj Holidays — experts in same-day Delhi to Agra trips, Golden Triangle packages, and sunrise photography tours. Experience guided sightseeing, car rentals, and custom travel itineraries across North India."
         />
 
         <meta
           name="keywords"
           content="
-      Explore Taj Holidays, 
+      Explore Taj Holidays,
       Explore Taj Travels,
-      Agra tours, 
-      Taj Mahal tours, 
-      Agra sightseeing, 
-      Golden Triangle tour, 
-      Delhi Agra Jaipur tour, 
-      private guided tours, 
-      India travel packages, 
-      same day Agra tour, 
-      sunrise Taj Mahal tour, 
-      Agra tour by car, 
-      Agra car rental, 
-      Taj Mahal day trip, 
-      Jaipur Agra tour, 
-      Delhi Agra tour, 
-      Agra fort tour, 
-      Fatehpur Sikri tour, 
-      North India tour packages, 
-      cultural heritage tours, 
-      custom itineraries, 
-      local Agra guide, 
-      best Taj Mahal tour operator, 
-      holiday packages India, 
-      Golden Triangle travel agency, 
-      private driver Agra, 
+      Agra tours,
+      Taj Mahal tours,
+      Delhi to Agra tour,
+      same day Agra tour by car,
+      Taj Mahal tour from Delhi airport,
+      private guided tours India,
+      Agra local sightseeing package,
+      Golden Triangle tour India,
+      Delhi Agra Jaipur tour package,
+      sunrise Taj Mahal photography tour,
+      Agra car rental,
+      India travel packages from USA,
+      India travel packages from UK,
+      Fatehpur Sikri tour,
+      Agra fort tour,
+      best Taj Mahal tour operator,
+      North India tour packages,
+      Agra day trips,
+      cultural heritage tours,
+      licensed tour guides Agra,
+      private driver Agra,
+      Agra sightseeing car hire,
+      holiday packages India,
+      Golden Triangle travel agency,
       Explore Taj Holidays reviews
     "
         />
@@ -94,11 +95,11 @@ export default function Home() {
         {/* Open Graph */}
         <meta
           property="og:title"
-          content="Explore Taj Holidays | Taj Mahal Tours & Agra Travel Packages"
+          content="Explore Taj Holidays | Taj Mahal Tours, Same Day Agra Trips & Golden Triangle Packages"
         />
         <meta
           property="og:description"
-          content="Book private Taj Mahal and Agra tours with Explore Taj Holidays. Enjoy guided sightseeing, car rentals, and custom Golden Triangle travel packages."
+          content="Explore Taj Holidays offers private Taj Mahal and Agra tours, same-day Delhi to Agra trips, Golden Triangle packages, and sunrise photography experiences with licensed guides."
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.exploretajholidays.com/" />
@@ -111,11 +112,11 @@ export default function Home() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="Explore Taj Holidays | Taj Mahal Tours & Agra Travel Packages"
+          content="Explore Taj Holidays | Taj Mahal Tours, Same Day Agra Trips & Golden Triangle Packages"
         />
         <meta
           name="twitter:description"
-          content="Plan your perfect Agra getaway. Explore the Taj Mahal, Agra Fort, and Fatehpur Sikri with private guides and custom itineraries from Explore Taj Holidays."
+          content="Plan your Delhi to Agra or Golden Triangle journey with Explore Taj Holidays. Private guided tours, car rentals, and custom itineraries for unforgettable India travel experiences."
         />
         <meta
           name="twitter:image"

@@ -22,41 +22,44 @@ export default function CarRentalPage() {
   return (
     <>
       <Helmet>
-        <title>Car Rental Services in Agra – Explore Taj Holidays</title>
+        <title>
+          Car Rental in Agra | Taxi & Chauffeur Services for Taj Mahal & Golden
+          Triangle Tours
+        </title>
 
         <meta
           name="description"
-          content="Book reliable and affordable car rental services in Agra with Explore Taj Holidays. Choose from sedans, SUVs, luxury cars, and tempo travellers for Taj Mahal tours, sightseeing, airport transfers, and Golden Triangle trips."
+          content="Book affordable and reliable car rental services in Agra with Explore Taj Holidays. Choose from sedans, SUVs, tempo travellers, and luxury cars for Taj Mahal tours, Delhi–Agra–Jaipur trips, airport transfers, and outstation travel across North India."
         />
 
         <meta
           name="keywords"
           content="
-      Car rental Agra, 
-      Taj Mahal car hire, 
-      Explore Taj Holidays, 
-      Agra taxi service, 
-      Agra sightseeing car rental, 
-      Golden Triangle car rental, 
-      Delhi Agra Jaipur car hire, 
-      sedan rental Agra, 
-      SUV rental Agra, 
-      luxury car rental Agra, 
-      tempo traveller Agra, 
-      airport transfer Agra, 
-      outstation taxi Agra, 
-      private driver Agra, 
-      Agra car booking, 
-      car hire for Taj Mahal, 
-      best car rental in Agra, 
-      affordable cab service Agra, 
-      local Agra car rental, 
-      chauffeur driven cars Agra, 
-      Agra to Jaipur taxi, 
-      Agra to Delhi car hire, 
-      Agra tour car service, 
-      sightseeing taxi Agra, 
-      Agra travel agency car rental
+      car rental Agra,
+      Agra car hire,
+      Explore Taj Holidays car rental,
+      Taj Mahal taxi service,
+      Agra sightseeing cab,
+      Golden Triangle car rental,
+      Delhi Agra Jaipur taxi,
+      Delhi Agra Jaipur car hire,
+      sedan rental Agra,
+      SUV rental Agra,
+      tempo traveller Agra,
+      luxury car rental Agra,
+      airport transfer Agra,
+      Agra to Delhi taxi,
+      Agra to Jaipur cab,
+      outstation car rental Agra,
+      chauffeur driven cars Agra,
+      private driver Agra,
+      best car rental in Agra,
+      affordable cab service Agra,
+      Taj Mahal tour by car,
+      same day Agra tour by taxi,
+      Agra day trip car hire,
+      sightseeing car service Agra,
+      North India road trip packages
     "
         />
 
@@ -69,11 +72,11 @@ export default function CarRentalPage() {
         {/* Open Graph for social sharing */}
         <meta
           property="og:title"
-          content="Car Rental Services in Agra – Explore Taj Holidays"
+          content="Car Rental in Agra | Taxi & Chauffeur Services for Taj Mahal & Golden Triangle Tours"
         />
         <meta
           property="og:description"
-          content="Comfortable, safe, and affordable rides in Agra with professional drivers. Choose from sedans, SUVs, and luxury cars for sightseeing or intercity transfers."
+          content="Travel comfortably with Explore Taj Holidays — offering reliable cars, professional drivers, and affordable packages for Taj Mahal tours, airport transfers, and Delhi–Jaipur–Agra trips."
         />
         <meta property="og:type" content="website" />
         <meta
@@ -86,11 +89,11 @@ export default function CarRentalPage() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="Car Rental Services in Agra – Explore Taj Holidays"
+          content="Car Rental in Agra | Taxi & Chauffeur Services for Taj Mahal & Golden Triangle Tours"
         />
         <meta
           name="twitter:description"
-          content="Book professional, affordable car rentals in Agra with Explore Taj Holidays. Perfect for Taj Mahal tours, airport transfers, and Golden Triangle trips."
+          content="Book reliable, affordable car rentals in Agra with Explore Taj Holidays. Enjoy safe rides with professional drivers for Taj Mahal tours and intercity travel."
         />
         <meta name="twitter:image" content={carRentalImage} />
       </Helmet>

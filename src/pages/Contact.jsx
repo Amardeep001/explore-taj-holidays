@@ -47,74 +47,95 @@ export default function Contact() {
   return (
     <>
       <Helmet>
-        {/* ✅ JSON-LD Schema (fixed formatting + validation) */}
+        {/* ✅ JSON-LD Schema (Organization + LocalBusiness for Agra Office) */}
         <script type="application/ld+json">{`
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Explore Taj Holidays",
-      "url": "https://www.exploretajholidays.com",
-      "logo": "https://exploretajholidays-assets.s3.ap-south-1.amazonaws.com/images/logo.png",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+91-7017149405",
-        "contactType": "Customer Service",
-        "areaServed": "IN",
-        "availableLanguage": ["English", "Hindi"]
-      },
-      "sameAs": [
-        "https://www.facebook.com/exploretajholidays",
-        "https://www.instagram.com/exploretajholidays",
-        "https://www.linkedin.com/company/explore-taj-holidays"
-      ]
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Explore Taj Holidays",
+    "url": "https://www.exploretajholidays.com",
+    "image": "https://exploretajholidays-assets.s3.ap-south-1.amazonaws.com/images/logo.png",
+    "telephone": "+91-7017149405",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Office Number: 1813/1K, Fatehabad Rd, opp. Hotel Trident, near Prerna Apartment",
+      "addressLocality": "Agra",
+      "addressRegion": "Uttar Pradesh",
+      "postalCode": "282006",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "27.1667",
+      "longitude": "78.0167"
+    },
+    "openingHours": "Mo-Su 09:00-20:00",
+    "sameAs": [
+      "https://www.facebook.com/exploretajholidays",
+      "https://www.instagram.com/exploretajholidays",
+      "https://www.linkedin.com/company/explore-taj-holidays"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-7017149405",
+      "contactType": "Customer Service",
+      "areaServed": "IN",
+      "availableLanguage": ["English", "Hindi"]
     }
+  }
   `}</script>
 
-        {/* Page Metadata */}
-        <title>Contact Explore Taj Holidays | Plan Your Trip to Agra</title>
+        {/* ✅ Meta Information */}
+        <title>
+          Contact Explore Taj Holidays | Book Tours & Travel Packages in Agra
+        </title>
+
         <meta
           name="description"
-          content="Get in touch with Explore Taj Holidays for Taj Mahal tours, Agra sightseeing, Golden Triangle trips, and custom India travel packages. Speak directly with DOT-approved guides for personalized assistance."
+          content="Contact Explore Taj Holidays to book Taj Mahal tours, Agra sightseeing, Golden Triangle packages, or private car rentals. Reach our travel experts and DOT-approved guides for personalized India travel planning."
         />
+
         <meta
           name="keywords"
           content="
-      Explore Taj Holidays, 
-      contact Explore Taj Holidays, 
-      Agra tour operator, 
-      Taj Mahal tours, 
-      Golden Triangle travel, 
-      Agra travel agency, 
-      India tour contact, 
-      DOT approved guides, 
-      Agra tourism office, 
-      Agra sightseeing packages, 
-      custom itineraries, 
-      private guided tours, 
-      travel booking Agra, 
-      local travel agency Agra, 
-      tour operator near Taj Mahal, 
-      best Agra tour company, 
-      car rental contact Agra, 
-      same day Agra tour, 
-      Delhi Agra Jaipur tour contact, 
-      holiday planner Agra
+      Explore Taj Holidays contact,
+      contact Explore Taj Holidays,
+      Agra tour operator contact,
+      Agra travel agency contact,
+      Taj Mahal tour booking,
+      Golden Triangle trip inquiry,
+      India tour package contact,
+      DOT-approved guides Agra,
+      Agra tourism office,
+      private car hire Agra,
+      same day Agra tour booking,
+      custom India travel itinerary,
+      holiday planner Agra,
+      North India tour booking,
+      Agra sightseeing contact,
+      best travel agency in Agra,
+      professional tour operator Agra,
+      Taj Mahal tour support,
+      explore taj holidays phone,
+      explore taj holidays email
     "
         />
+
         <meta name="robots" content="index, follow" />
         <link
           rel="canonical"
           href="https://www.exploretajholidays.com/contact"
         />
 
-        {/* Open Graph */}
+        {/* ✅ Open Graph */}
         <meta
           property="og:title"
-          content="Contact Explore Taj Holidays | Plan Your Trip to Agra"
+          content="Contact Explore Taj Holidays | Book Tours & Travel Packages in Agra"
         />
         <meta
           property="og:description"
-          content="Reach out to Explore Taj Holidays for guided tours, private car rentals, and personalized itineraries in Agra. DOT-approved guides ready to assist you."
+          content="Reach out to Explore Taj Holidays for tour bookings, car rentals, and custom itineraries in Agra. DOT-approved guides and expert travel support available daily."
         />
         <meta property="og:type" content="website" />
         <meta
@@ -123,15 +144,15 @@ export default function Contact() {
         />
         <meta property="og:image" content={contactImage} />
 
-        {/* Twitter Card */}
+        {/* ✅ Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="Contact Explore Taj Holidays | Plan Your Trip to Agra"
+          content="Contact Explore Taj Holidays | Book Tours & Travel Packages in Agra"
         />
         <meta
           name="twitter:description"
-          content="Reach out to Explore Taj Holidays for guided tours, private car rentals, and custom itineraries in Agra. DOT-approved guides ready to assist you."
+          content="Message or call Explore Taj Holidays to plan your Agra and Golden Triangle trip. Personalized assistance from expert travel planners and licensed guides."
         />
         <meta name="twitter:image" content={contactImage} />
       </Helmet>

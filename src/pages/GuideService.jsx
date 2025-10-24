@@ -23,7 +23,7 @@ const mehtabBaghImage =
 const heritageImage =
   "https://exploretajholidays-assets.s3.ap-south-1.amazonaws.com/images/guide/heritage_walk.png";
 const localMarketImage =
-  "https://exploretajholidays-assets.s3.ap-south-1.amazonaws.com/images/guide/local_market.png";
+  "https://exploretajholidays-assets.s3.ap-south-1.amazonaws.com/images/guide/local_market.jpg";
 
 export default function GuideServicePage() {
   useEffect(() => {
@@ -33,79 +33,95 @@ export default function GuideServicePage() {
   return (
     <>
       <Helmet>
-        {/* ✅ JSON-LD Schema for DOT Approved Guides */}
+        {/* ✅ Combined LocalBusiness + Service Schema for better rich results */}
         <script type="application/ld+json">{`
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Explore Taj Holidays - DOT Approved Tour Guides",
-      "image": "https://exploretajholidays-assets.s3.ap-south-1.amazonaws.com/images/guide-banner.jpg",
-      "@id": "https://www.exploretajholidays.com/guide-service",
-      "url": "https://www.exploretajholidays.com/guide-service",
-      "telephone": "+91-7017149405",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "1813/1K, Fatehabad Rd, opp. Hotel Trident, near Prerna Apartment",
-        "addressLocality": "Agra",
-        "addressRegion": "Uttar Pradesh",
-        "postalCode": "282006",
-        "addressCountry": "IN"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "27.1673",
-        "longitude": "78.0419"
-      },
-      "openingHours": "Mo-Su 10:00-19:00",
-      "priceRange": "₹₹",
-      "sameAs": [
-        "https://www.facebook.com/exploretajholidays",
-        "https://www.instagram.com/exploretajholidays"
-      ],
-      "description": "DOT approved and multilingual tour guides in Agra offering personalized Taj Mahal and heritage tours with Explore Taj Holidays."
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Explore Taj Holidays - DOT Approved Tour Guides",
+    "image": "https://exploretajholidays-assets.s3.ap-south-1.amazonaws.com/images/guide-banner.jpg",
+    "@id": "https://www.exploretajholidays.com/guide-service",
+    "url": "https://www.exploretajholidays.com/guide-service",
+    "telephone": "+91-7017149405",
+    "priceRange": "₹₹",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1813/1K, Fatehabad Rd, opp. Hotel Trident, near Prerna Apartment",
+      "addressLocality": "Agra",
+      "addressRegion": "Uttar Pradesh",
+      "postalCode": "282006",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "27.1673",
+      "longitude": "78.0419"
+    },
+    "openingHours": "Mo-Su 09:00-19:00",
+    "sameAs": [
+      "https://www.facebook.com/exploretajholidays",
+      "https://www.instagram.com/exploretajholidays",
+      "https://www.linkedin.com/company/explore-taj-holidays"
+    ],
+    "description": "Hire DOT-approved, multilingual tour guides in Agra for Taj Mahal, Agra Fort, and Fatehpur Sikri tours. Trusted professionals with government certification from Explore Taj Holidays.",
+    "serviceType": "Tour Guide Service",
+    "areaServed": {
+      "@type": "Place",
+      "name": "Agra, Uttar Pradesh, India"
     }
+  }
   `}</script>
 
-        {/* SEO Title & Meta Tags */}
-        <title>DOT Approved Tour Guides in Agra – Explore Taj Holidays</title>
+        {/* ✅ SEO Title & Description */}
+        <title>
+          DOT Approved Tour Guides in Agra | Taj Mahal & Heritage Tours
+        </title>
+
         <meta
           name="description"
-          content="Explore Agra with licensed Department of Tourism (DOT) approved guides. Enjoy heritage walks, Taj Mahal tours, and custom sightseeing with multilingual, professional guides from Explore Taj Holidays."
+          content="Hire licensed DOT-approved tour guides in Agra for Taj Mahal, Agra Fort, and heritage city tours. Explore Agra’s history with multilingual, experienced guides from Explore Taj Holidays."
         />
+
         <meta
           name="keywords"
           content="
       DOT approved tour guides Agra,
-      Agra tour guide service,
+      Taj Mahal tour guide booking,
       Explore Taj Holidays guides,
-      Taj Mahal guide booking,
-      Heritage walk Agra,
-      Agra sightseeing tours,
-      multilingual guides Agra,
-      private guided tours Agra,
-      licensed tour guides Uttar Pradesh,
-      best guides in Agra,
+      Agra sightseeing guide,
       government approved guides Taj Mahal,
-      Agra city tour guide,
-      local travel guide Agra,
-      Agra tourism guide service,
-      Delhi Agra Jaipur guide package
+      licensed tour guide Agra,
+      heritage walk Agra,
+      multilingual guide Agra,
+      private guided tour Agra,
+      local guide Agra Fort,
+      Fatehpur Sikri guide,
+      Delhi Agra Jaipur tour guide,
+      Golden Triangle guide package,
+      best guide in Agra,
+      certified tour guide Agra,
+      official Taj Mahal guide,
+      professional tour guides India,
+      same day Agra tour guide,
+      Agra city heritage expert,
+      personalized tour guide Agra
     "
         />
+
         <meta name="robots" content="index, follow" />
         <link
           rel="canonical"
           href="https://www.exploretajholidays.com/guide-service"
         />
 
-        {/* Open Graph (Facebook, WhatsApp, LinkedIn) */}
+        {/* ✅ Open Graph */}
         <meta
           property="og:title"
-          content="DOT Approved Tour Guides in Agra – Explore Taj Holidays"
+          content="DOT Approved Tour Guides in Agra | Taj Mahal & Heritage Tours"
         />
         <meta
           property="og:description"
-          content="Experience Agra with DOT approved multilingual guides. Personalized Taj Mahal tours, heritage walks, and custom sightseeing by Explore Taj Holidays."
+          content="Book DOT-approved multilingual guides in Agra for Taj Mahal, Agra Fort, and heritage tours. Enjoy expert storytelling and safe, personalized experiences with Explore Taj Holidays."
         />
         <meta property="og:type" content="website" />
         <meta
@@ -114,15 +130,15 @@ export default function GuideServicePage() {
         />
         <meta property="og:image" content={guideBanner} />
 
-        {/* Twitter Card */}
+        {/* ✅ Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="DOT Approved Tour Guides in Agra – Explore Taj Holidays"
+          content="DOT Approved Tour Guides in Agra | Taj Mahal & Heritage Tours"
         />
         <meta
           name="twitter:description"
-          content="Book DOT approved tour guides in Agra for Taj Mahal and heritage tours. Personalized experiences with multilingual experts from Explore Taj Holidays."
+          content="Hire experienced DOT-approved guides in Agra for Taj Mahal and heritage walks. Trusted, multilingual professionals from Explore Taj Holidays."
         />
         <meta name="twitter:image" content={guideBanner} />
       </Helmet>
