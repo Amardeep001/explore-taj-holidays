@@ -195,13 +195,25 @@ export default function Contact() {
               <div className="flex items-center gap-4">
                 <Phone className="text-yellow-500" />
                 <span className="text-gray-800 text-lg font-medium">
-                  +91-7017149405
+                  <a
+                    href="https://wa.me/917017149405?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20Taj%20Mahal%20tours."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-800"
+                  >
+                    +91-7017149405
+                  </a>
                 </span>
               </div>
               <div className="flex items-center gap-4">
                 <Mail className="text-yellow-500" />
                 <span className="text-gray-800 text-lg font-medium">
-                  exploretajholiday@gmail.com
+                  <a
+                    href="mailto:exploretajholiday@gmail.com"
+                    className="text-gray-800"
+                  >
+                    exploretajholiday@gmail.com
+                  </a>
                 </span>
               </div>
               <div className="flex items-center gap-4">

@@ -59,8 +59,22 @@ export default function Footer() {
           <h3 className="text-lg font-semibold text-white mb-3">Contact Us</h3>
           <ul className="space-y-2 text-sm">
             <li>📍 Agra, Uttar Pradesh, India</li>
-            <li>📞 +91 7017149405</li>
-            <li>✉️ exploretajholiday@gmail.com</li>
+            <li>
+              📞{" "}
+              <a
+                href="https://wa.me/917017149405?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20Taj%20Mahal%20tours."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                +91-7017149405
+              </a>
+            </li>
+            <li>
+              📩{" "}
+              <a href="mailto:exploretajholiday@gmail.com">
+                exploretajholiday@gmail.com
+              </a>
+            </li>
           </ul>
         </div>
       </div>

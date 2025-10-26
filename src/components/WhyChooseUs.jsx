@@ -6,7 +6,7 @@ export default function WhyChooseUs() {
     { text: "Licensed professional guides", link: "/guides" },
     { text: "Comfortable, well-maintained transport", link: "/car-rental" },
     { text: "Customized itineraries", link: "/itineraries" },
-    { text: "Transparent pricing – no hidden costs", link: "/guides" },
+    { text: "Transparent pricing – no hidden costs", link: "/contact" },
     { text: "24/7 assistance during your trip", link: "/guides" },
   ];
 

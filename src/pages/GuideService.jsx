@@ -355,15 +355,33 @@ export default function GuideServicePage() {
         <section className="py-20 px-6">
           <div className="bg-gradient-to-r from-[#9d1c1f] to-[#a11f23] text-white py-12 px-8 rounded-2xl shadow-lg max-w-4xl mx-auto text-center">
             <h3 className="text-3xl font-bold mb-4">
-              📩 Get in Touch with Our DOT Approved Guides
+              Get in Touch with Our DOT Approved Guides
             </h3>
             <p className="mb-6 text-gray-100 text-lg">
               Let us help you create unforgettable memories! Whether you're
               traveling solo, with family, or on a group tour, our guides ensure
               your experience is safe, smooth, and enriching.
             </p>
-            <p className="mb-4">📞 Phone: +91-7017149405</p>
-            <p className="mb-4">📧 Email: exploretajholiday@gmail.com</p>
+            <p className="mb-4">
+              📞 Phone:{" "}
+              <a
+                href="https://wa.me/917017149405?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20Taj%20Mahal%20tours."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-100"
+              >
+                +91-7017149405
+              </a>
+            </p>
+            <p className="mb-4">
+              📧 Email:{" "}
+              <a
+                href="mailto:exploretajholiday@gmail.com"
+                className="text-gray-100"
+              >
+                exploretajholiday@gmail.com
+              </a>
+            </p>
             <p className="mb-8">📍 Location: Agra, Uttar Pradesh, India</p>
             <Link
               to="/contact"
