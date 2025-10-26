@@ -1,5 +1,5 @@
 // src/pages/CarRental.jsx
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import {
   FaCar,
   FaMapMarkerAlt,
@@ -10,14 +10,47 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import { Loader2 } from "lucide-react";
 
 const carRentalImage =
   "https://exploretajholidays-assets.s3.ap-south-1.amazonaws.com/images/car_rental.png";
 
 export default function CarRentalPage() {
+  const [showForm, setShowForm] = useState(false);
+  const [loading, setLoading] = useState(false);
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      const res = await fetch("/api/book-car", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (res.ok) {
+        alert("✅ Your car booking request has been sent successfully!");
+        e.target.reset();
+        setShowForm(false);
+      } else {
+        alert("❌ Failed to send booking request. Please try again.");
+      }
+    } catch (err) {
+      console.error("Error:", err);
+      alert("⚠️ Something went wrong.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <>
@@ -283,14 +316,143 @@ export default function CarRentalPage() {
               Enjoy stress-free travel with door-to-door service from major
               locations. Our team is ready to assist you 24/7.
             </p>
-            <Link
-              to="/contact"
+            <button
+              onClick={() => setShowForm(true)}
               className="inline-block bg-white text-red-700 font-medium py-3 px-8 rounded-lg shadow hover:scale-105 transition"
             >
-              Contact Us
-            </Link>
+              Book a Car
+            </button>
+
+            <div className="mt-6">
+              <Link
+                to="/contact"
+                className="text-white underline hover:text-gray-200"
+              >
+                Contact Us
+              </Link>
+            </div>
           </div>
         </section>
+        {/* ✅ Car Booking Popup Form */}
+        {showForm && (
+          <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 px-4">
+            <div className="bg-white rounded-2xl shadow-xl w-full max-w-2xl p-8 relative">
+              {loading && (
+                <div className="absolute inset-0 bg-white/70 flex items-center justify-center z-10">
+                  <Loader2 className="animate-spin text-red-600 w-8 h-8" />
+                </div>
+              )}
+              <button
+                onClick={() => setShowForm(false)}
+                className="absolute top-3 right-4 text-gray-600 hover:text-red-600 text-xl"
+              >
+                ✖
+              </button>
+
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+                🚗 Book Your Car Rental
+              </h3>
+
+              <form className="space-y-5" onSubmit={handleSubmit}>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Your Name"
+                    required
+                    className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-red-500 outline-none"
+                  />
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Your Email"
+                    required
+                    className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-red-500 outline-none"
+                  />
+                </div>
+
+                <div className="grid md:grid-cols-3 gap-4">
+                  <input
+                    type="tel"
+                    name="phone"
+                    placeholder="Contact Number"
+                    required
+                    className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-red-500 outline-none"
+                  />
+                  <input
+                    type="number"
+                    name="pax"
+                    placeholder="No. of Pax"
+                    min="1"
+                    required
+                    className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-red-500 outline-none"
+                  />
+                  <input
+                    type="date"
+                    name="date"
+                    required
+                    className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-red-500 outline-none"
+                  />
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-4">
+                  <select
+                    name="vehicleType"
+                    required
+                    className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-red-500 outline-none"
+                  >
+                    <option value="">Select Vehicle Type</option>
+                    <option value="Sedan">Sedan</option>
+                    <option value="SUV">SUV</option>
+                    <option value="Urbania">Urbania</option>
+                  </select>
+
+                  <select
+                    name="package"
+                    required
+                    className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-red-500 outline-none"
+                  >
+                    <option value="">Select Package</option>
+                    <option value="Half Day 4hrs/40km">
+                      Half Day 4hrs/40km
+                    </option>
+                    <option value="Full Day 8hrs/80km">
+                      Full Day 8hrs/80km
+                    </option>
+                    <option value="Agra Airport Pickup/Drop">
+                      Agra Airport Pickup/Drop
+                    </option>
+                    <option value="Railway Station Pickup/Drop">
+                      Railway Station Pickup/Drop
+                    </option>
+                    <option value="Delhi Airport/Hotel Pickup/Drop">
+                      Delhi Airport/Hotel Pickup/Drop
+                    </option>
+                    <option value="Jaipur Hotel/Airport Pickup/Drop">
+                      Jaipur Hotel/Airport Pickup/Drop
+                    </option>
+                  </select>
+                </div>
+
+                <textarea
+                  name="message"
+                  rows="4"
+                  placeholder="Additional details or special requests..."
+                  required
+                  className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-red-500 outline-none"
+                ></textarea>
+
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="w-full bg-red-600 text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition"
+                >
+                  {loading ? "Sending..." : "Submit Booking"}
+                </button>
+              </form>
+            </div>
+          </div>
+        )}
       </main>
     </>
   );

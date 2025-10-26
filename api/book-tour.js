@@ -5,7 +5,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  const { name, email, phone, pax, date, message } = req.body;
+  const { tour, name, email, phone, pax, date, message } = req.body;
 
   try {
     const transporter = nodemailer.createTransport({
@@ -18,16 +18,19 @@ export default async function handler(req, res) {
 
     const htmlTemplate = `
       <div style="font-family:Arial,sans-serif;max-width:600px;margin:auto;padding:20px;border:1px solid #eee;border-radius:10px;">
-        <h2 style="color:#e63946;">📩 New Travel Inquiry</h2>
+        <h2 style="color:#e63946;">🎟️ New Tour Booking Inquiry</h2>
+        <p><strong>Tour Name:</strong> ${tour}</p>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Contact No:</strong> ${phone}</p>
         <p><strong>No. of Pax:</strong> ${pax}</p>
-        <p><strong>Preferred Travel Date:</strong> ${date}</p>
+        <p><strong>Preferred Date:</strong> ${date}</p>
         <p><strong>Message:</strong></p>
-        <p style="background:#f8f9fa;padding:15px;border-radius:8px;">${message}</p>
+        <p style="background:#f8f9fa;padding:15px;border-radius:8px;">${
+          message || "No additional message provided."
+        }</p>
         <hr/>
-        <p style="font-size:12px;color:#888;">This email was sent via the Explore Taj Holidays contact form.</p>
+        <p style="font-size:12px;color:#888;">This inquiry was sent via the Explore Taj Holidays website tour booking form.</p>
       </div>
     `;
 
@@ -35,7 +38,7 @@ export default async function handler(req, res) {
       from: `"Explore Taj Holidays" <exploretajholiday@gmail.com>`,
       to: "exploretajholiday@gmail.com",
       replyTo: email,
-      subject: "📩 New Travel Inquiry via Explore Taj Holidays Website",
+      subject: `📅 New Tour Booking Request - ${tour}`,
       html: htmlTemplate,
     });
 

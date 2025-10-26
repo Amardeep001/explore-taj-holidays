@@ -1,6 +1,7 @@
 // src/pages/Itineraries.jsx
 import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
+import { Loader2 } from "lucide-react";
 
 export default function Itineraries() {
   const tours = [
@@ -34,11 +35,52 @@ export default function Itineraries() {
     },
   ];
 
-  const [showCustomForm, setShowCustomForm] = useState(false);
+  const [showCustomForm, setShowCustomForm] = useState({
+    visible: false,
+    tourName: "",
+  });
+
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
+
+  const handleCustomSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    const formData = new FormData(e.target);
+    const data = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+      pax: formData.get("pax"),
+      date: formData.get("date"),
+      message: formData.get("message"),
+    };
+
+    try {
+      const res = await fetch("/api/custom-itinerary", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (res.ok) {
+        alert("✅ Your custom itinerary request has been sent successfully!");
+        e.target.reset();
+        setShowCustomForm(false);
+      } else {
+        alert("❌ Failed to send request. Try again later.");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("⚠️ Something went wrong!");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <>
@@ -188,7 +230,7 @@ export default function Itineraries() {
 
       <main className="w-full bg-gradient-to-br from-gray-50 via-white to-gray-100 min-h-screen py-16 px-6">
         <div className="max-w-full mx-auto">
-          <h1 className="text-4xl font-extrabold text-center mt-16 md:mt-12  mb-12 text-gray-900">
+          <h1 className="text-4xl font-extrabold text-center mt-16 md:mt-12 mb-12 text-gray-900">
             Itineraries
           </h1>
 
@@ -199,9 +241,6 @@ export default function Itineraries() {
                 key={idx}
                 className="relative rounded-2xl p-8 shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 bg-gradient-to-br from-sky-100 via-white to-pink-100 border border-gray-200"
               >
-                {/* Subtle decorative gradient overlay */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-amber-200/40 via-pink-200/30 to-purple-200/40 opacity-70 -z-10 blur-lg"></div>
-
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">
                   {tour.title}
                 </h2>
@@ -211,45 +250,110 @@ export default function Itineraries() {
                     <li key={i}>{item}</li>
                   ))}
                 </ul>
+
+                {/* ✅ Book Now Button */}
+                <div className="text-center mt-6">
+                  <button
+                    onClick={() =>
+                      setShowCustomForm({ visible: true, tourName: tour.title })
+                    }
+                    className="bg-gradient-to-r from-amber-400 via-orange-500 to-pink-500 text-white font-semibold py-2 px-6 rounded-lg shadow-md hover:scale-105 transform transition"
+                  >
+                    Book Now
+                  </button>
+                </div>
               </div>
             ))}
           </div>
 
-          {/* Custom Itinerary Option */}
+          {/* Booking / Custom Form */}
           <div className="text-center mt-16">
-            {!showCustomForm ? (
+            {!showCustomForm.visible ? (
               <button
-                onClick={() => setShowCustomForm(true)}
+                onClick={() =>
+                  setShowCustomForm({ visible: true, tourName: "" })
+                }
                 className="bg-red-600 text-white px-8 py-3 rounded-lg font-medium shadow hover:bg-red-700 transition"
               >
                 Create Your Custom Itinerary
               </button>
             ) : (
-              <div className="bg-white shadow-lg rounded-2xl p-8 max-w-3xl mx-auto text-left">
+              <div className="bg-white shadow-lg rounded-2xl p-8 max-w-3xl mx-auto text-left relative">
+                {loading && (
+                  <div className="absolute inset-0 bg-white/70 flex items-center justify-center z-10">
+                    <Loader2 className="w-8 h-8 animate-spin text-red-500" />
+                  </div>
+                )}
+
                 <h3 className="text-2xl font-bold mb-6 text-gray-900">
-                  Custom Itinerary Request
+                  {showCustomForm.tourName
+                    ? `Book: ${showCustomForm.tourName}`
+                    : "Custom Itinerary Request"}
                 </h3>
-                <form className="space-y-4">
+
+                <form className="space-y-5" onSubmit={handleCustomSubmit}>
+                  {/* Hidden field for tour name */}
                   <input
-                    type="text"
-                    placeholder="Your Name"
-                    className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-red-500 outline-none"
+                    type="hidden"
+                    name="tourName"
+                    value={showCustomForm.tourName || "Custom Itinerary"}
                   />
-                  <input
-                    type="email"
-                    placeholder="Your Email"
-                    className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-red-500 outline-none"
-                  />
+
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="Your Name"
+                      required
+                      className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-red-500 outline-none"
+                    />
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="Your Email"
+                      required
+                      className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-red-500 outline-none"
+                    />
+                  </div>
+
+                  <div className="grid md:grid-cols-3 gap-4">
+                    <input
+                      type="tel"
+                      name="phone"
+                      placeholder="Contact Number"
+                      required
+                      className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-red-500 outline-none"
+                    />
+                    <input
+                      type="number"
+                      name="pax"
+                      placeholder="No. of Pax"
+                      min="1"
+                      required
+                      className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-red-500 outline-none"
+                    />
+                    <input
+                      type="date"
+                      name="date"
+                      required
+                      className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-red-500 outline-none"
+                    />
+                  </div>
+
                   <textarea
-                    placeholder="Tell us about your preferred destinations, dates, and requirements..."
+                    name="message"
                     rows={5}
+                    placeholder="Tell us about your travel preferences or special requests..."
+                    required
                     className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-red-500 outline-none"
                   ></textarea>
+
                   <button
                     type="submit"
-                    className="bg-red-600 text-white px-6 py-2 rounded-lg font-medium shadow hover:bg-red-700 transition"
+                    disabled={loading}
+                    className="bg-red-600 text-white px-8 py-3 rounded-lg font-medium shadow hover:bg-red-700 transition w-full"
                   >
-                    Submit Request
+                    {loading ? "Sending..." : "Submit Booking"}
                   </button>
                 </form>
               </div>

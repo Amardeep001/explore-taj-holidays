@@ -1,5 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Mail, Phone, MapPin, MessageCircle, Loader2 } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  MessageCircle,
+  Calendar,
+  Users,
+  Loader2,
+} from "lucide-react";
 import { Helmet } from "react-helmet-async";
 
 const contactImage =
@@ -20,6 +28,9 @@ export default function Contact() {
     const data = {
       name: formData.get("name"),
       email: formData.get("email"),
+      phone: formData.get("phone"),
+      pax: formData.get("pax"),
+      date: formData.get("date"),
       message: formData.get("message"),
     };
 
@@ -46,6 +57,7 @@ export default function Contact() {
 
   return (
     <>
+      {/* SEO Helmet */}
       <Helmet>
         {/* ✅ JSON-LD Schema (Organization + LocalBusiness for Agra Office) */}
         <script type="application/ld+json">{`
@@ -167,6 +179,7 @@ export default function Contact() {
         </div>
       )}
 
+      {/* Page Layout */}
       <div className="bg-gray-50 min-h-screen pb-16">
         {/* Banner */}
         <section
@@ -188,33 +201,29 @@ export default function Contact() {
             <h2 className="text-3xl font-bold text-gray-900">Get in Touch</h2>
             <p className="text-gray-600">
               Have questions, suggestions, or need help planning your trip?
-              Reach out to us anytime. We’d love to hear from you!
+              Reach out to us anytime — we’d love to hear from you!
             </p>
 
             <div className="space-y-4">
               <div className="flex items-center gap-4">
                 <Phone className="text-yellow-500" />
-                <span className="text-gray-800 text-lg font-medium">
-                  <a
-                    href="https://wa.me/917017149405?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20Taj%20Mahal%20tours."
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-800"
-                  >
-                    +91-7017149405
-                  </a>
-                </span>
+                <a
+                  href="https://wa.me/917017149405?text=Hello%2C%20I%20want%20to%20plan%20a%20trip%20to%20Agra."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-800 text-lg font-medium"
+                >
+                  +91-7017149405
+                </a>
               </div>
               <div className="flex items-center gap-4">
                 <Mail className="text-yellow-500" />
-                <span className="text-gray-800 text-lg font-medium">
-                  <a
-                    href="mailto:exploretajholiday@gmail.com"
-                    className="text-gray-800"
-                  >
-                    exploretajholiday@gmail.com
-                  </a>
-                </span>
+                <a
+                  href="mailto:exploretajholiday@gmail.com"
+                  className="text-gray-800 text-lg font-medium"
+                >
+                  exploretajholiday@gmail.com
+                </a>
               </div>
               <div className="flex items-center gap-4">
                 <MapPin className="text-yellow-500" />
@@ -225,12 +234,12 @@ export default function Contact() {
               <div className="flex items-center gap-4">
                 <MessageCircle className="text-yellow-500" />
                 <a
-                  href="https://wa.me/917017149405?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20Taj%20Mahal%20tours."
+                  href="https://wa.me/917017149405?text=Hello%2C%20I%20want%20to%20book%20a%20Taj%20Mahal%20tour."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-800 text-lg font-medium hover:text-green-600 transition"
                 >
-                  Chat with us on WhatsApp
+                  Chat on WhatsApp
                 </a>
               </div>
             </div>
@@ -241,7 +250,9 @@ export default function Contact() {
             <h3 className="text-2xl font-semibold mb-6 text-gray-900">
               Send Us a Message
             </h3>
+
             <form className="space-y-5" onSubmit={handleSubmit}>
+              {/* Name */}
               <div>
                 <label className="block text-sm font-medium text-gray-700">
                   Name
@@ -249,11 +260,13 @@ export default function Contact() {
                 <input
                   type="text"
                   name="name"
-                  placeholder="Enter your name"
+                  placeholder="Enter your full name"
                   className="w-full mt-1 px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-yellow-500 outline-none"
                   required
                 />
               </div>
+
+              {/* Email */}
               <div>
                 <label className="block text-sm font-medium text-gray-700">
                   Email
@@ -261,11 +274,55 @@ export default function Contact() {
                 <input
                   type="email"
                   name="email"
-                  placeholder="Enter your email"
+                  placeholder="Enter your email address"
                   className="w-full mt-1 px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-yellow-500 outline-none"
                   required
                 />
               </div>
+
+              {/* Contact No */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700">
+                  Contact Number
+                </label>
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="Enter your phone number"
+                  className="w-full mt-1 px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-yellow-500 outline-none"
+                  required
+                />
+              </div>
+
+              {/* No. of Pax */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700">
+                  Number of Pax
+                </label>
+                <input
+                  type="number"
+                  name="pax"
+                  min="1"
+                  placeholder="Number of travelers"
+                  className="w-full mt-1 px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-yellow-500 outline-none"
+                  required
+                />
+              </div>
+
+              {/* Travel Date */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700">
+                  Travel Date
+                </label>
+                <input
+                  type="date"
+                  name="date"
+                  className="w-full mt-1 px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-yellow-500 outline-none"
+                  required
+                />
+              </div>
+
+              {/* Message */}
               <div>
                 <label className="block text-sm font-medium text-gray-700">
                   Message
@@ -273,11 +330,12 @@ export default function Contact() {
                 <textarea
                   name="message"
                   rows="4"
-                  placeholder="Write your query or suggestion..."
+                  placeholder="Write your query or travel requirements..."
                   className="w-full mt-1 px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-yellow-500 outline-none"
                   required
                 ></textarea>
               </div>
+
               <button
                 type="submit"
                 disabled={loading}

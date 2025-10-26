@@ -65,13 +65,17 @@ export default function Footer() {
                 href="https://wa.me/917017149405?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20Taj%20Mahal%20tours."
                 target="_blank"
                 rel="noopener noreferrer"
+                className="text-white"
               >
                 +91-7017149405
               </a>
             </li>
             <li>
               📩{" "}
-              <a href="mailto:exploretajholiday@gmail.com">
+              <a
+                href="mailto:exploretajholiday@gmail.com"
+                className="text-white"
+              >
                 exploretajholiday@gmail.com
               </a>
             </li>
