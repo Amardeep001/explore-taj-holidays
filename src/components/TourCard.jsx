@@ -79,10 +79,10 @@ export default function TourCard({ title, description, schedule }) {
       {/* Booking Modal */}
       {openForm && (
         <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-2xl p-8 w-full max-w-md shadow-xl relative">
+          <div className="bg-white rounded-2xl p-8 w-full max-h-[90%] overflow-y-auto max-w-md shadow-xl relative">
             <button
               onClick={() => setOpenForm(false)}
-              className="absolute top-3 right-3 text-gray-500 hover:text-red-500 text-lg"
+              className="absolute top-1 right-1 px-[10px] py-[2px] text-gray-500 hover:text-red-500 text-lg"
             >
               ✖
             </button>

@@ -58,6 +58,7 @@ export default function Itineraries() {
       pax: formData.get("pax"),
       date: formData.get("date"),
       message: formData.get("message"),
+      tourName: formData.get("tourName"),
     };
 
     try {

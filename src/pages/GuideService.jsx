@@ -435,7 +435,7 @@ export default function GuideServicePage() {
         {/* ✅ Booking Popup Modal */}
         {showForm && (
           <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 px-4">
-            <div className="bg-white rounded-2xl shadow-xl w-full max-w-2xl p-8 relative">
+            <div className="bg-white rounded-2xl shadow-xl w-full max-h-[90%] overflow-y-auto max-w-2xl p-8 relative">
               {loading && (
                 <div className="absolute inset-0 bg-white/70 flex items-center justify-center z-10">
                   <Loader2 className="animate-spin text-red-600 w-8 h-8" />
@@ -443,7 +443,7 @@ export default function GuideServicePage() {
               )}
               <button
                 onClick={() => setShowForm(false)}
-                className="absolute top-3 right-4 text-gray-600 hover:text-red-600 text-xl"
+                className="absolute top-1 right-1 px-[10px] py-[2px] text-gray-600 hover:text-red-600 text-xl"
               >
                 ✖
               </button>
