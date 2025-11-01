@@ -1,9 +1,21 @@
 // src/pages/Itineraries.jsx
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Helmet } from "react-helmet-async";
 import { Loader2 } from "lucide-react";
 
 export default function Itineraries() {
+  const bookingRef = useRef(null);
+
+  const handleBookNow = (tourName) => {
+    setShowCustomForm({ visible: true, tourName });
+    setTimeout(() => {
+      bookingRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }, 100); // 👈 slight delay ensures form renders before scroll
+  };
+
   const tours = [
     {
       title: "Same Day Delhi – Agra – Delhi Tour by Road",
@@ -31,6 +43,30 @@ export default function Itineraries() {
         "Private AC car and chauffeur",
         "Hassle-free entrance assistance",
         "Flexible itinerary based on your schedule",
+      ],
+    },
+    {
+      title: "Golden Triangle Tour: Delhi – Agra – Jaipur (5N / 6D)",
+      description:
+        "Explore India’s most iconic destinations — Delhi, Agra, and Jaipur — on this 6-day Golden Triangle Tour. Experience royal palaces, Mughal marvels, and the vibrant culture of North India with expert guides and comfortable travel.",
+      schedule: [
+        "Day 1: Arrival in Delhi – Meet our representative and check in at your hotel. Optional evening sightseeing: India Gate, President’s House, Connaught Place.",
+        "Day 2: Delhi Sightseeing – Visit Red Fort (outside view), Jama Masjid, Chandni Chowk, Raj Ghat, Humayun’s Tomb, Qutub Minar, and Lotus Temple. Overnight in Delhi.",
+        "Day 3: Delhi → Agra (Approx. 4 hrs) – Visit Agra Fort, Mehtab Bagh (sunset view of Taj Mahal), and local markets. Overnight in Agra.",
+        "Day 4: Agra → Jaipur (Approx. 5 hrs) – Early morning Taj Mahal visit, then drive to Jaipur via Fatehpur Sikri. Check in and rest. Overnight in Jaipur.",
+        "Day 5: Jaipur Sightseeing – Visit Amber Fort, City Palace, Jantar Mantar, and Hawa Mahal. Optional visit to Chokhi Dhani for Rajasthani dinner and cultural show. Overnight in Jaipur.",
+        "Day 6: Jaipur → Delhi (Approx. 5 hrs) – Drive back to Delhi and drop at airport or railway station for onward journey.",
+        "Tour Highlights: Explore Delhi’s heritage, witness the Taj Mahal’s beauty, experience royal Jaipur, enjoy comfortable travel & expert-guided sightseeing.",
+      ],
+    },
+    {
+      title: "Delhi – Agra – Delhi Overnight Tour (1N / 2D)",
+      description:
+        "A perfect short getaway from Delhi to experience the Taj Mahal, Agra Fort, and Mehtab Bagh. Enjoy a comfortable overnight stay in Agra and personalized guided sightseeing before returning to Delhi.",
+      schedule: [
+        "Day 1: Delhi → Agra (Approx. 4 hrs) – Early morning pick-up from Delhi and drive via Yamuna Expressway. Visit Agra Fort, Mehtab Bagh, and explore Agra’s markets. Overnight in Agra.",
+        "Day 2: Agra → Delhi (Approx. 4 hrs) – Early morning Taj Mahal visit at sunrise. Breakfast and check out. Drive back to Delhi and drop at hotel or airport.",
+        "Tour Highlights: Visit Taj Mahal, explore Agra Fort, enjoy Yamuna River views from Mehtab Bagh, comfortable AC transfers, and guided heritage sightseeing.",
       ],
     },
   ];
@@ -240,24 +276,24 @@ export default function Itineraries() {
             {tours.map((tour, idx) => (
               <div
                 key={idx}
-                className="relative rounded-2xl p-8 shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 bg-gradient-to-br from-sky-100 via-white to-pink-100 border border-gray-200"
+                className="relative flex flex-col justify-between rounded-2xl p-8 shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 bg-gradient-to-br from-sky-100 via-white to-pink-100 border border-gray-200"
               >
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                  {tour.title}
-                </h2>
-                <p className="text-gray-700 mb-6">{tour.description}</p>
-                <ul className="space-y-2 text-left list-disc list-inside text-gray-600">
-                  {tour.schedule.map((item, i) => (
-                    <li key={i}>{item}</li>
-                  ))}
-                </ul>
+                <div>
+                  <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                    {tour.title}
+                  </h2>
+                  <p className="text-gray-700 mb-6">{tour.description}</p>
+                  <ul className="space-y-2 text-left list-disc list-inside text-gray-600">
+                    {tour.schedule.map((item, i) => (
+                      <li key={i}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
 
-                {/* ✅ Book Now Button */}
+                {/* ✅ Book Now Button pinned at bottom */}
                 <div className="text-center mt-6">
                   <button
-                    onClick={() =>
-                      setShowCustomForm({ visible: true, tourName: tour.title })
-                    }
+                    onClick={() => handleBookNow(tour.title)} // 👈 scroll trigger
                     className="bg-gradient-to-r from-amber-400 via-orange-500 to-pink-500 text-white font-semibold py-2 px-6 rounded-lg shadow-md hover:scale-105 transform transition"
                   >
                     Book Now
@@ -268,12 +304,12 @@ export default function Itineraries() {
           </div>
 
           {/* Booking / Custom Form */}
-          <div className="text-center mt-16">
+          <div ref={bookingRef} className="text-center mt-16">
+            {" "}
+            {/* 👈 scroll target */}
             {!showCustomForm.visible ? (
               <button
-                onClick={() =>
-                  setShowCustomForm({ visible: true, tourName: "" })
-                }
+                onClick={() => handleBookNow("")}
                 className="bg-red-600 text-white px-8 py-3 rounded-lg font-medium shadow hover:bg-red-700 transition"
               >
                 Create Your Custom Itinerary
@@ -293,7 +329,6 @@ export default function Itineraries() {
                 </h3>
 
                 <form className="space-y-5" onSubmit={handleCustomSubmit}>
-                  {/* Hidden field for tour name */}
                   <input
                     type="hidden"
                     name="tourName"

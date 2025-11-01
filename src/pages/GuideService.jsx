@@ -29,6 +29,114 @@ const localMarketImage =
 export default function GuideServicePage() {
   const [showForm, setShowForm] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [selectedTour, setSelectedTour] = useState(null);
+
+  const tours = [
+    {
+      name: "Taj Mahal",
+      img: tajmahalImage,
+      description: `
+        <h3 class="text-2xl font-bold mb-3 text-gray-900">Discover the Timeless Beauty of the Taj Mahal</h3>
+        <p class="text-gray-700 mb-3">Step into a world where love is carved in white marble. The Taj Mahal, one of the Seven Wonders of the World, stands proudly on the banks of the Yamuna River in Agra, India — a symbol of eternal love, artistry, and perfection.</p>
+        <p class="text-gray-700 mb-3">Commissioned by Emperor Shah Jahan in memory of his beloved wife Mumtaz Mahal, this architectural masterpiece blends Persian, Islamic, and Indian styles, glowing with changing hues under the sun and moon.</p>
+        <h4 class="text-lg font-semibold mt-4 mb-2 text-gray-900">Why Visit the Taj Mahal?</h4>
+        <ul class="list-disc pl-6 text-gray-700 space-y-1 mb-3">
+          <li>Witness the breathtaking marble dome that shimmers at sunrise and glows in moonlight.</li>
+          <li>Explore the serene Mughal gardens and intricate carvings that tell tales of love and devotion.</li>
+          <li>Capture unforgettable photos at one of the most romantic and iconic landmarks in the world.</li>
+        </ul>
+        <p class="text-gray-700">The Taj Mahal isn’t just a monument — it’s a journey into history, art, and emotion. Come, feel the magic for yourself.</p>
+      `,
+    },
+    {
+      name: "Agra Fort",
+      img: agrafortImage,
+      description: `
+        <h3 class="text-2xl font-bold mb-3 text-gray-900">Experience the Majesty of Agra Fort</h3>
+        <p class="text-gray-700 mb-3">Step back in time and explore the grandeur of Agra Fort, a UNESCO World Heritage Site that echoes the legacy of India’s glorious Mughal era. Located just 2.5 km from the Taj Mahal, this magnificent red sandstone fortress once served as the royal residence of emperors and a symbol of their power, art, and vision.</p>
+        <p class="text-gray-700 mb-3">Built by Emperor Akbar in 1565, the fort is a masterpiece of Mughal architecture, blending Islamic and Hindu design influences. Walk through majestic gates, royal courtyards, and marble palaces that once witnessed the rise and fall of empires.</p>
+        <h4 class="text-lg font-semibold mt-4 mb-2 text-gray-900">Highlights You Can’t Miss:</h4>
+        <ul class="list-disc pl-6 text-gray-700 space-y-1 mb-3">
+          <li><strong>Jahangir Palace:</strong> A fusion of Mughal and Rajput architecture.</li>
+          <li><strong>Diwan-i-Aam & Diwan-i-Khas:</strong> Elegant halls where emperors held grand audiences.</li>
+          <li><strong>Moti Masjid (Pearl Mosque):</strong> A pristine symbol of purity and devotion.</li>
+          <li><strong>Musamman Burj:</strong> The romantic balcony where Shah Jahan spent his last days gazing at the Taj Mahal.</li>
+        </ul>
+        <p class="text-gray-700">Discover the heart of Mughal power — a fort that tells tales of courage, art, and timeless beauty. Agra Fort isn’t just a monument; it’s a living chapter of India’s royal past.</p>
+      `,
+    },
+    {
+      name: "Fatehpur Sikri",
+      img: fatehpurImage,
+      description: `
+        <h3 class="text-2xl font-bold mb-3 text-gray-900">Step into the Timeless Grandeur of Fatehpur Sikri</h3>
+        <p class="text-gray-700 mb-3">Discover the charm of Fatehpur Sikri, the “City of Victory,” and a stunning testament to the vision of Emperor Akbar. Just a short drive from Agra, this UNESCO World Heritage Site invites you to walk through an ancient royal city frozen in time — where every arch, courtyard, and palace tells a story of power, faith, and art.</p>
+        <p class="text-gray-700 mb-3">Built in the 16th century, Fatehpur Sikri served as the Mughal capital for a brief but brilliant period. Its architecture reflects a harmonious blend of Persian, Islamic, and Indian styles, symbolizing Akbar’s dream of unity and cultural fusion.</p>
+        <h4 class="text-lg font-semibold mt-4 mb-2 text-gray-900">Must-See Attractions:</h4>
+        <ul class="list-disc pl-6 text-gray-700 space-y-1 mb-3">
+          <li><strong>Buland Darwaza:</strong> The grand gateway that celebrates Akbar’s victory — one of the tallest in the world.</li>
+          <li><strong>Jama Masjid:</strong> A magnificent mosque that radiates peace and devotion.</li>
+          <li><strong>Panch Mahal:</strong> A five-story marvel offering breathtaking views.</li>
+          <li><strong>Tomb of Salim Chishti:</strong> A sacred shrine believed to grant blessings and wishes.</li>
+        </ul>
+        <p class="text-gray-700">Walk through the mystical corridors of Fatehpur Sikri, where history whispers through red sandstone walls and the spirit of the Mughal Empire lives on.</p>
+        <p class="text-gray-700">Fatehpur Sikri — where every step is a journey into royal elegance and timeless faith.</p>
+      `,
+    },
+    {
+      name: "Mehtab Bagh",
+      img: mehtabBaghImage,
+      description: `
+        <h3 class="text-2xl font-bold mb-3 text-gray-900">Mehtab Bagh – The Moonlit Garden of the Taj Mahal</h3>
+        <p class="text-gray-700 mb-3">Experience the romantic charm and serene beauty of Mehtab Bagh, the “Garden of the Moonlight,” located just across the Yamuna River from the Taj Mahal in Agra. Designed as the perfect viewing point for the monument of love, this Mughal-era garden offers breathtaking, symmetrical views of the Taj — especially at sunset and under the soft glow of the moon.</p>
+        <p class="text-gray-700 mb-3">Originally laid out by Emperor Babur, the founder of the Mughal dynasty, Mehtab Bagh is the last of the eleven Mughal gardens along the Yamuna. With its lush greenery, tranquil walkways, and stunning riverfront setting, it’s a peaceful escape from the city bustle and a paradise for photographers and nature lovers alike.</p>
+        <h4 class="text-lg font-semibold mt-4 mb-2 text-gray-900">Why Visit Mehtab Bagh:</h4>
+        <ul class="list-disc pl-6 text-gray-700 space-y-1 mb-3">
+          <li>Enjoy the most picturesque view of the Taj Mahal, reflected beautifully in the Yamuna River.</li>
+          <li>Relax in perfectly landscaped Mughal gardens, filled with flowers, fountains, and shaded paths.</li>
+          <li>Capture magical sunsets and moonlit moments for unforgettable photos.</li>
+          <li>Ideal for couples, nature enthusiasts, and history lovers alike.</li>
+        </ul>
+        <p class="text-gray-700">Escape into the tranquil beauty of Mehtab Bagh, where nature, history, and love meet under the open sky.</p>
+        <p class="text-gray-700">Mehtab Bagh — the garden where the Taj Mahal truly shines.</p>
+      `,
+    },
+    {
+      name: "Heritage Walks",
+      img: heritageImage,
+      description: `
+        <h3 class="text-2xl font-bold mb-3 text-gray-900">Agra Heritage Walk – Discover the Soul of the City</h3>
+        <p class="text-gray-700 mb-3">Go beyond the Taj Mahal and step into the living history of Agra with the Agra Heritage Walk — an unforgettable journey through time, culture, and tradition. Wander through narrow lanes, ancient markets, and vibrant neighborhoods that tell stories of Mughal grandeur and local life.</p>
+        <p class="text-gray-700 mb-3">This guided walk takes you through the hidden gems of Agra, from centuries-old temples and mosques to artisan workshops where age-old crafts still thrive. Experience the real Agra — authentic, colorful, and full of life.</p>
+        <h4 class="text-lg font-semibold mt-4 mb-2 text-gray-900">Highlights of the Agra Heritage Walk:</h4>
+        <ul class="list-disc pl-6 text-gray-700 space-y-1 mb-3">
+          <li>Explore the Kinari Bazaar, buzzing with local flavors, handicrafts, and Mughal-era charm.</li>
+          <li>Visit ancient havelis, traditional houses showcasing Mughal artistry.</li>
+          <li>Witness local artisans at work — bangle makers, marble inlayers, and spice traders.</li>
+          <li>Enjoy a glimpse of everyday Agra, where heritage meets modern life.</li>
+          <li>Capture stunning views of the Taj Mahal and Agra Fort from unique local vantage points.</li>
+        </ul>
+        <p class="text-gray-700">The Agra Heritage Walk isn’t just a tour — it’s a journey through stories, smiles, and centuries. Come walk through the lanes of history and see Agra the way locals live it!</p>
+      `,
+    },
+    {
+      name: "Local Markets",
+      img: localMarketImage,
+      description: `
+        <h3 class="text-2xl font-bold mb-3 text-gray-900">Shopping in Agra – Take Home a Piece of Mughal Magic</h3>
+        <p class="text-gray-700 mb-3">Your journey to Agra isn’t complete without diving into its vibrant markets and artistic heritage. Beyond the Taj Mahal, Agra is a shopper’s paradise — a city where centuries-old craftsmanship meets modern flair. From dazzling marble inlay work to colorful textiles and delicious local sweets, every lane offers something special to take home.</p>
+        <h4 class="text-lg font-semibold mt-4 mb-2 text-gray-900">What to Shop For:</h4>
+        <ul class="list-disc pl-6 text-gray-700 space-y-1 mb-3">
+          <li><strong>Marble Handicrafts:</strong> Beautiful souvenirs inspired by the Taj Mahal’s artistry — inlaid with semi-precious stones.</li>
+          <li><strong>Leather Goods:</strong> Agra is famous for high-quality leather shoes, bags, and belts.</li>
+          <li><strong>Pietra Dura Work:</strong> Exquisite gemstone inlay art, crafted by descendants of the Taj’s original artisans.</li>
+          <li><strong>Textiles & Embroidery:</strong> Handwoven carpets, silk sarees, and Mughal-style fabrics.</li>
+          <li><strong>Agra Petha:</strong> The city’s iconic sweet treat — perfect as a gift or souvenir!</li>
+        </ul>
+        <p class="text-gray-700">Shop, smile, and celebrate Agra’s heritage! From royal artistry to street charm, shopping in Agra is more than retail — it’s a cultural experience you’ll never forget.</p>
+      `,
+    },
+  ];
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -307,53 +415,24 @@ export default function GuideServicePage() {
         </section>
 
         {/* Popular Tours */}
-        <section className="bg-gradient-to-r from-gray-50 via-white to-gray-50 py-20">
+        <section className="bg-gradient-to-r from-gray-50 via-white to-gray-50 py-20 relative">
           <div className="max-w-7xl mx-auto px-6 text-center">
-            {/* Section Title */}
             <h3 className="text-3xl md:text-4xl font-extrabold mb-12 text-gray-900">
               🗺 Popular Tours We Cover
             </h3>
 
-            {/* Grid of Tours */}
             <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
-              {[
-                {
-                  name: "Taj Mahal",
-                  img: tajmahalImage,
-                },
-                {
-                  name: "Agra Fort",
-                  img: agrafortImage,
-                },
-                {
-                  name: "Fatehpur Sikri",
-                  img: fatehpurImage,
-                },
-                {
-                  name: "Mehtab Bagh",
-                  img: mehtabBaghImage,
-                },
-                {
-                  name: "Heritage Walks",
-                  img: heritageImage,
-                },
-                {
-                  name: "Local Markets",
-                  img: localMarketImage,
-                },
-              ].map((tour) => (
+              {tours.map((tour) => (
                 <li
                   key={tour.name}
-                  className="group relative overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition duration-300"
+                  className="group relative overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition duration-300 cursor-pointer"
+                  onClick={() => setSelectedTour(tour)}
                 >
-                  {/* Image */}
                   <img
                     src={tour.img}
                     alt={tour.name}
                     className="w-full h-64 object-cover group-hover:scale-110 transition duration-500"
                   />
-
-                  {/* Overlay */}
                   <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition duration-300 flex items-center justify-center">
                     <h4 className="text-white text-xl md:text-2xl font-semibold tracking-wide">
                       {tour.name}
@@ -363,6 +442,29 @@ export default function GuideServicePage() {
               ))}
             </ul>
           </div>
+
+          {/* Modal */}
+          {selectedTour && (
+            <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
+              <div className="bg-white max-w-2xl w-full mx-4 rounded-2xl shadow-2xl overflow-y-auto max-h-[90vh] relative animate-fadeIn">
+                <button
+                  onClick={() => setSelectedTour(null)}
+                  className="absolute top-3 right-4 text-gray-500 hover:text-red-500 text-2xl font-bold"
+                >
+                  &times;
+                </button>
+                <img
+                  src={selectedTour.img}
+                  alt={selectedTour.name}
+                  className="w-full h-64 object-cover rounded-t-2xl"
+                />
+                <div
+                  className="p-6 text-left"
+                  dangerouslySetInnerHTML={{ __html: selectedTour.description }}
+                />
+              </div>
+            </div>
+          )}
         </section>
 
         {/* What Our Guides Offer */}
