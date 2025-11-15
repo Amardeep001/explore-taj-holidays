@@ -16,16 +16,19 @@ export default function About() {
   return (
     <>
       <Helmet>
+        {/* ✅ Title: Focus on Trust and Authority */}
         <title>
-          About Explore Taj Holidays | Trusted Agra Tour Operator & Travel
-          Agency
+          Trusted Agra Tour Operator & Government Recognized Travel Agency |
+          Explore Taj Holidays
         </title>
 
+        {/* ✅ Description: Highlight Years of Experience and Authority */}
         <meta
           name="description"
-          content="Discover Explore Taj Holidays — a government-recognized travel agency in Agra offering Taj Mahal tours, Golden Triangle packages, DOT-approved guides, and private car rentals across North India. Providing exceptional travel experiences since 2012."
+          content="Since 2012, Explore Taj Holidays has been a government-recognized, trusted travel agency in Agra. We provide DOT-approved guides, private Taj Mahal tours, Golden Triangle packages, and exceptional service across North India."
         />
 
+        {/* Keywords are still good, no major change needed here, though Google relies less on this tag now. */}
         <meta
           name="keywords"
           content="
@@ -61,10 +64,10 @@ export default function About() {
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://www.exploretajholidays.com/about" />
 
-        {/* Open Graph */}
+        {/* Open Graph (OG) is good, just updated the title/description to match */}
         <meta
           property="og:title"
-          content="About Explore Taj Holidays | Trusted Agra Tour Operator & Travel Agency"
+          content="Trusted Agra Tour Operator & Government Recognized Travel Agency | Explore Taj Holidays"
         />
         <meta
           property="og:description"
@@ -77,17 +80,52 @@ export default function About() {
         />
         <meta property="og:image" content={aboutImage} />
 
-        {/* Twitter Card */}
+        {/* Twitter Card is good, updated the title/description to match */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="About Explore Taj Holidays | Trusted Agra Tour Operator & Travel Agency"
+          content="Trusted Agra Tour Operator & Government Recognized Travel Agency | Explore Taj Holidays"
         />
         <meta
           name="twitter:description"
           content="Explore Taj Holidays offers DOT-approved guides, private tours, and customized Golden Triangle travel packages. Based in Agra, we deliver memorable India experiences since 2012."
         />
         <meta name="twitter:image" content={aboutImage} />
+
+        {/* ---------------------------------------------------------------- */}
+        {/* ✅ Structured Data (Schema.org) - Add to your <Helmet> or just before </body> */}
+        {/* This confirms to Google that this page is your 'About' page. */}
+        {/* NOTE: You may need to adjust how you inject this JSON-LD based on your React framework. */}
+        <script type="application/ld+json">
+          {`
+            {
+                "@context": "https://schema.org",
+                "@type": "AboutPage",
+                "mainEntityOfPage": "https://www.exploretajholidays.com/about",
+                "name": "About Explore Taj Holidays - Trusted Agra Tour Operator",
+                "description": "Information about Explore Taj Holidays, a government-recognized travel agency in Agra specializing in Taj Mahal and Golden Triangle tours since 2012.",
+                "url": "https://www.exploretajholidays.com/about",
+                "about": {
+                    "@type": "Organization",
+                    "name": "Explore Taj Holidays",
+                    "url": "https://www.exploretajholidays.com",
+                    "logo": "https://www.exploretajholidays.com/logo.jpg",
+                    "foundingDate": "2012",
+                    "areaServed": "IN",
+                    "contactPoint": {
+                        "@type": "ContactPoint",
+                        "telephone": "+91-7017149405",
+                        "contactType": "Customer Service"
+                    },
+                    "sameAs": [
+                        "https://www.facebook.com/exploretajholidays",
+                        "https://www.instagram.com/exploretajholidays",
+                        "https://www.linkedin.com/company/explore-taj-holidays"
+                    ]
+                }
+            }
+        `}
+        </script>
       </Helmet>
 
       <main className="bg-gray-50 min-h-screen">
