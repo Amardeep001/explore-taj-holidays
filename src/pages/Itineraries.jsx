@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Helmet } from "react-helmet-async";
 import { Loader2 } from "lucide-react";
+import swal from "sweetalert";
 
 export default function Itineraries() {
   const bookingRef = useRef(null);
@@ -105,15 +106,24 @@ export default function Itineraries() {
       });
 
       if (res.ok) {
-        alert("✅ Your custom itinerary request has been sent successfully!");
         e.target.reset();
         setShowCustomForm(false);
+        swal({
+          title: "THANK YOU FOR BOOKING WITH US.!",
+          text:
+            "We are really thankful to you for choosing & trusting us.\n" +
+            "One of our Travel Experts will contact you within 24 hours.",
+          button: {
+            text: "Continue to Homepage",
+            className: "swal-button--confirm",
+          },
+        });
       } else {
-        alert("❌ Failed to send request. Try again later.");
+        swal("Failed!", "❌ Failed to send booking. Try again later.", "error");
       }
     } catch (err) {
       console.error(err);
-      alert("⚠️ Something went wrong!");
+      swal("Error!", "⚠️ Something went wrong!", "warning");
     } finally {
       setLoading(false);
     }
@@ -397,6 +407,20 @@ export default function Itineraries() {
           </div>
         </div>
       </main>
+      <a
+        href="https://wa.me/919720646926"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-3 left-3 z-50 bg-green-500 rounded-full shadow-xl p-4 hover:bg-green-600 transition transform hover:scale-110"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 32 32"
+          className="w-8 h-8 text-white fill-white"
+        >
+          <path d="M16.003 2.003c-7.732 0-14 6.268-14 14 0 2.474.646 4.884 1.872 7.008L2 30l7.187-1.856A13.94 13.94 0 0 0 16.003 30c7.732 0 14-6.268 14-14s-6.268-14-14-14zm0 2c6.627 0 12 5.373 12 12 0 6.628-5.373 12-12 12-2.162 0-4.289-.586-6.15-1.693l-.44-.259-4.266 1.103 1.14-4.162-.286-.452A11.94 11.94 0 0 1 4.003 16c0-6.627 5.373-12 12-12zm6.207 15.342c-.338-.169-2.003-.988-2.314-1.102-.311-.113-.538-.17-.764.17-.226.339-.878 1.101-1.076 1.327-.198.226-.395.254-.733.085-.338-.169-1.428-.527-2.72-1.681-1.005-.898-1.684-2.007-1.882-2.346-.198-.339-.021-.522.148-.69.152-.152.339-.395.508-.592.169-.198.226-.339.339-.565.113-.226.056-.424-.028-.593-.085-.169-.764-1.843-1.047-2.523-.276-.664-.558-.573-.764-.585l-.651-.012c-.226 0-.593.085-.904.424-.311.339-1.187 1.16-1.187 2.828 0 1.668 1.215 3.278 1.385 3.504.169.226 2.392 3.655 5.815 5.118.813.351 1.446.561 1.939.717.815.259 1.558.223 2.146.135.655-.098 2.003-.817 2.287-1.606.282-.789.282-1.466.197-1.606-.085-.141-.31-.226-.648-.395z" />
+        </svg>
+      </a>
     </>
   );
 }

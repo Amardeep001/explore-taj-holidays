@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Loader2 } from "lucide-react";
+import swal from "sweetalert";
 
 export default function TourCard({ title, description, schedule }) {
   const [openForm, setOpenForm] = useState(false);
@@ -28,15 +29,24 @@ export default function TourCard({ title, description, schedule }) {
       });
 
       if (res.ok) {
-        alert("✅ Booking request sent successfully!");
         e.target.reset();
         setOpenForm(false);
+        swal({
+          title: "THANK YOU FOR BOOKING WITH US.!",
+          text:
+            "We are really thankful to you for choosing & trusting us.\n" +
+            "One of our Travel Experts will contact you within 24 hours.",
+          button: {
+            text: "Continue to Homepage",
+            className: "swal-button--confirm",
+          },
+        });
       } else {
-        alert("❌ Failed to send booking. Try again later.");
+        swal("Failed!", "❌ Failed to send booking. Try again later.", "error");
       }
     } catch (err) {
       console.error(err);
-      alert("⚠️ Something went wrong!");
+      swal("Error!", "⚠️ Something went wrong!", "warning");
     } finally {
       setLoading(false);
     }
