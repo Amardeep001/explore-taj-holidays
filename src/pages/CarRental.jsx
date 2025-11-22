@@ -47,7 +47,7 @@ export default function CarRentalPage() {
             "We are really thankful to you for choosing & trusting us.\n" +
             "One of our Travel Experts will contact you within 24 hours.",
           button: {
-            text: "Continue to Homepage",
+            text: "Continue to Car Rental Page",
             className: "swal-button--confirm",
           },
         });

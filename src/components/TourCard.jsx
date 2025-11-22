@@ -37,7 +37,7 @@ export default function TourCard({ title, description, schedule }) {
             "We are really thankful to you for choosing & trusting us.\n" +
             "One of our Travel Experts will contact you within 24 hours.",
           button: {
-            text: "Continue to Homepage",
+            text: "Continue to Home page",
             className: "swal-button--confirm",
           },
         });
