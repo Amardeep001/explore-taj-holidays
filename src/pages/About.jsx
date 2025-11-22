@@ -244,7 +244,7 @@ export default function About() {
         </section>
       </main>
       <a
-        href="https://wa.me/919720646926"
+        href="https://wa.me/917017149405"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-3 left-3 z-50 bg-green-500 rounded-full shadow-xl p-4 hover:bg-green-600 transition transform hover:scale-110"
