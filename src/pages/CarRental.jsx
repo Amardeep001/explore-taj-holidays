@@ -256,7 +256,7 @@ export default function CarRentalPage() {
         <section className="py-16">
           <div className="w-full mx-auto px-6 text-center">
             <h2 className="text-2xl md:text-3xl font-bold mb-10 text-gray-900">
-              📅 Rental Packages
+              Rental Packages
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:mx-10 ">
               {[
