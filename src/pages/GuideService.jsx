@@ -480,7 +480,7 @@ export default function GuideServicePage() {
         {/* What Our Guides Offer */}
         <section className="max-w-5xl mx-auto px-6 py-16 text-center">
           <h3 className="text-2xl md:text-3xl font-bold mb-8 text-gray-900">
-            📜 What Our Guides Offer
+            What Our Guides Offer
           </h3>
           <ul className="text-center max-w-3xl mx-auto space-y-3 text-gray-700">
             <li>✔ Detailed historical, architectural, and cultural insights</li>
