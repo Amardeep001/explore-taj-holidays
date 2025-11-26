@@ -428,7 +428,7 @@ export default function GuideServicePage() {
         <section className="bg-gradient-to-r from-gray-50 via-white to-gray-50 py-20 relative">
           <div className="max-w-7xl mx-auto px-6 text-center">
             <h3 className="text-3xl md:text-4xl font-extrabold mb-12 text-gray-900">
-              🗺 Popular Tours We Cover
+              Popular Tours We Cover
             </h3>
 
             <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
