@@ -6,6 +6,7 @@ import About from "../components/About";
 import Contact from "../components/Contact";
 import LocationMap from "../components/LocationMap";
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   useEffect(() => {
@@ -146,34 +147,14 @@ export default function Home() {
             </div>
           ))}
         </div>
-      </section>
 
-      {/* Skip the Line – Taj Mahal Entry Section */}
-      <section
-        id="skip"
-        className="w-full pt-14 pb-10 bg-gradient-to-r from-[#fffbe9] via-white to-[#fffbe9]"
-      >
-        <div className="max-w-6xl mx-auto px-6 flex flex-col items-center text-center">
-          <h2 className="text-3xl md:text-4xl font-extrabold mb-6 bg-gradient-to-r from-[#a02023] to-[#c92d31] bg-clip-text text-transparent">
-            Skip the Line – Taj Mahal Entry
-          </h2>
-
-          <p className="text-gray-700 max-w-3xl leading-relaxed mb-8 text-lg">
-            Save time and avoid long queues at the Taj Mahal by booking your
-            entry tickets online through the official ASI portal. Get instant
-            confirmation, guaranteed entry, and a seamless experience so you can
-            focus on exploring this iconic monument without delays.
-          </p>
-
-          <a
-            href="http://asi.payumoney.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-8 py-3 bg-green-600 text-white font-semibold rounded-full shadow-lg hover:bg-green-700 transition transform hover:scale-105"
-          >
-            Book Taj Mahal Tickets Online
-          </a>
-        </div>
+        {/* ⭐ View Tours Button */}
+        <Link
+          to="/itineraries"
+          className="mt-12 px-10 py-4 bg-gradient-to-r from-[#a02023] to-[#c92d31] text-white font-semibold rounded-xl shadow-lg hover:scale-105 transition transform duration-300"
+        >
+          View All Tours
+        </Link>
       </section>
 
       {/* Why Choose Us Section */}
