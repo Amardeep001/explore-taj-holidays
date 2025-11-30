@@ -13,16 +13,19 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60"></div>
 
       {/* Content */}
-      <div className="relative z-10 text-center text-white px-4 max-w-3xl">
+      <div
+        className="relative z-10 text-center text-white px-4 max-w-3xl 
+                      pt-24 md:pt-0"
+      >
+        {" "}
+        {/* ⭐ Added mobile padding */}
         <h1 className="text-4xl md:text-6xl font-extrabold mb-4 drop-shadow-lg tracking-wide">
           Explore Incredible India
         </h1>
         <p className="text-lg md:text-2xl mb-6 drop-shadow-md font-light">
           Your Trusted Travel Partner Since 2012
         </p>
-        {/* =========================================
-            ⭐ FULL Skip-the-Line Section Inserted
-        ========================================== */}
+        {/* Skip Section */}
         <section id="skip" className="w-full pt-6 rounded-2xl shadow-lg mt-4">
           <div className="px-6 flex flex-col items-center text-center">
             <h2 className="text-2xl md:text-3xl font-extrabold mb-4 bg-gradient-to-r from-yellow-300 to-red-400 bg-clip-text text-transparent drop-shadow">
