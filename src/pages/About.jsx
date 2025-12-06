@@ -3,10 +3,11 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
+// https://exploretajholidays-assets.s3.ap-south-1.amazonaws.com/images/about.png
 const travelExperienceImage =
   "https://exploretajholidays-assets.s3.ap-south-1.amazonaws.com/images/travel_experience.jpeg";
 const aboutImage =
-  "https://exploretajholidays-assets.s3.ap-south-1.amazonaws.com/images/about.png";
+  "https://exploretajholidays-assets.s3.ap-south-1.amazonaws.com/images/tajmahal/tajmahal_tourist2.jpg";
 
 export default function About() {
   useEffect(() => {

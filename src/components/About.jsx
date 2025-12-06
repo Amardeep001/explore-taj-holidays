@@ -1,6 +1,9 @@
 import React from "react";
+// const tourismImage =
+//   "https://exploretajholidays-assets.s3.ap-south-1.amazonaws.com/images/agra_tourism.jpg";
+
 const tourismImage =
-  "https://exploretajholidays-assets.s3.ap-south-1.amazonaws.com/images/agra_tourism.jpg";
+  "https://exploretajholidays-assets.s3.ap-south-1.amazonaws.com/images/tajmahal/tajmahal_tourist7.jpg";
 
 const About = () => {
   return (
