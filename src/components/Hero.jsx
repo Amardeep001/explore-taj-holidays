@@ -93,7 +93,7 @@ export default function Hero() {
       {/* Gradient overlay - removed for clearer video */}
 
       {/* Content */}
-      <div className="relative z-10 text-center text-gray-900 px-4 max-w-3xl pt-24 mt-20 md:pt-0">
+      <div className="relative z-10 text-center text-gray-900 px-4 max-w-3xl md-pt-24 md:mt-20 py-4">
         <h1 className="text-4xl md:text-6xl font-extrabold mb-4 drop-shadow-lg tracking-wide">
           Explore Incredible India
         </h1>
@@ -108,7 +108,13 @@ export default function Hero() {
               Skip the Line – Taj Mahal Entry
             </h2>
 
-            <p className="text-gray-900 max-w-3xl leading-relaxed mb-6 text-base md:text-lg drop-shadow">
+            <p
+              className="text-white max-w-3xl leading-relaxed mb-6 text-base md:text-lg"
+              style={{
+                textShadow:
+                  "2px 2px 8px rgba(0,0,0,0.9), 0 0 15px rgba(0,0,0,0.7)",
+              }}
+            >
               Save time and avoid long queues at the Taj Mahal by booking your
               entry tickets online through the official ASI portal. Get instant
               confirmation, guaranteed entry, and a seamless experience so you
