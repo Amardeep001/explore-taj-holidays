@@ -132,13 +132,19 @@ export default function About() {
       <main className="bg-gray-50 min-h-screen">
         {/* Banner */}
         <section
-          className="relative h-[80vh] bg-cover bg-center flex items-center justify-center "
+          className="relative w-full h-screen bg-cover bg-center flex items-center justify-center"
           style={{
             backgroundImage: `url(${aboutImage})`,
           }}
         >
-          <div className="absolute inset-0 bg-black/50"></div>
-          <h1 className="relative text-4xl md:text-5xl font-extrabold text-white z-10">
+          {/* <div className="absolute inset-0 bg-black/50"></div> */}
+          <h1
+            className="relative text-4xl md:text-5xl font-extrabold text-white z-10"
+            style={{
+              textShadow:
+                "2px 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.6)",
+            }}
+          >
             About Us
           </h1>
         </section>
