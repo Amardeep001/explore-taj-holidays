@@ -70,6 +70,63 @@ export default function Itineraries() {
         "Tour Highlights: Visit Taj Mahal, explore Agra Fort, enjoy Yamuna River views from Mehtab Bagh, comfortable AC transfers, and guided heritage sightseeing.",
       ],
     },
+    {
+      title: "Ayodhya Luxury City Tour – For Foreign, NRI & VIP Guests",
+      description:
+        "Experience the spiritual soul of India with an exclusive Ayodhya city tour designed for foreign travelers, NRIs, diplomats, and VIP guests. Enjoy premium comfort, private guided visits, and seamless assistance to explore Ayodhya’s sacred temples and heritage sites.",
+      schedule: [
+        "Pickup from hotel/airport/railway station in a premium air-conditioned vehicle",
+        "Visit Shri Ram Janmabhoomi Temple with guided cultural briefing and entry assistance (as per regulations)",
+        "Explore Hanuman Garhi temple with panoramic city views",
+        "Visit Kanak Bhawan – temple of Lord Ram and Goddess Sita",
+        "Visit Dashrath Mahal – royal palace of the Ikshvaku dynasty",
+        "Walk along Saryu River & Ghats – optional evening Aarti experience",
+        "Visit Tulsi Smarak Bhawan for cultural insight into Goswami Tulsidas’ life",
+        "Optional traditional vegetarian lunch at a premium local restaurant",
+        "Drop back at hotel after sightseeing",
+        "Tour Duration Options: Half Day (4–5 hours) or Full Day (7–8 hours)",
+        "Best Time: October to March, early morning visits preferred for smooth darshan",
+      ],
+    },
+
+    {
+      title: "Varanasi City Tour – 3 Days / 2 Nights",
+      description:
+        "Discover the spiritual capital of India with this 3-day Varanasi tour. Experience sacred temples, sunrise boat ride on the Ganges, Sarnath excursion, and the mesmerizing Ganga Aarti, with comfortable stays and guided sightseeing.",
+      schedule: [
+        "Day 1: Arrival in Varanasi – Transfer to hotel and check-in",
+        "Visit Kashi Vishwanath Temple, Annapurna Temple & Kal Bhairav Temple",
+        "Evening Ganga Aarti at Dashashwamedh Ghat (VIP seating/boat view optional)",
+        "Overnight stay in Varanasi",
+        "Day 2: Early morning sunrise boat ride on River Ganges",
+        "Breakfast at hotel",
+        "Visit Banaras Hindu University (BHU) & New Vishwanath Temple",
+        "Excursion to Sarnath – Dhamek Stupa, Mulagandha Kuti Vihar & Museum",
+        "Evening at leisure or optional cultural program",
+        "Overnight stay in Varanasi",
+        "Day 3: Breakfast and check-out",
+        "Transfer for departure",
+        "Option A: Train by Vande Bharat Express to Delhi (meals onboard)",
+        "Option B: Flight to Delhi (approx. 1.5 hrs)",
+      ],
+    },
+
+    {
+      title: "Taj Mahal Sunrise Private Guided Tour with Photography",
+      description:
+        "Experience the Taj Mahal at sunrise with a private guided tour focused on photography. Enjoy fewer crowds, perfect morning light, and personalized assistance for capturing stunning memories of this world wonder.",
+      schedule: [
+        "05:30 AM – Hotel pickup in Agra in a private air-conditioned vehicle",
+        "Meet government-approved professional guide and complete entry formalities",
+        "06:00 AM – Sunrise visit of Taj Mahal with photography session",
+        "Photography highlights: Main entrance arch framing, reflection pool symmetry, Mughal gardens, Diana Bench portraits, marble inlay details, Yamuna river angle views",
+        "Free time to explore and capture photos at your own pace",
+        "Approx. 2–2.5 hours inside Taj Mahal",
+        "Note: Photography not permitted inside the main mausoleum",
+        "08:30 AM – Drop back at hotel in Agra",
+        "Tour ends with Explore Taj Holidays – A Comfort World",
+      ],
+    },
   ];
 
   const [showCustomForm, setShowCustomForm] = useState({
